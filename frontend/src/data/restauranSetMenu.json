@@ -1,0 +1,41 @@
+{
+    "data": {
+        "signatureSets": [
+            {
+                "id": "set_001",
+                "name": "ชุดจันทร์ฉาย",
+                "description": "รวมฮิตทุกอย่างในร้าน จัดจานแบบอลังการงานสร้าง",
+                "image": "/images/sets/jan-chai-signature.jpg",
+                "isAvailable": true
+            },
+            {
+                "id": "set_002",
+                "name": "ชุดนารีสโมสร",
+                "description": "พรีเมียมสายคลีน เน้นโปรตีนและผัก",
+                "image": "/images/sets/naree-club-premium.jpg",
+                "isAvailable": true
+            },
+            {
+                "id": "set_003",
+                "name": "ชุดจันทร์พันดาว",
+                "description": "เซตลูกชิ้นโฮมเมดและผักออร์แกนิก 10 ชนิด",
+                "image": "/images/sets/jan-1000-stars.jpg",
+                "isAvailable": false
+            },
+            {
+                "id": "set_004",
+                "name": "ชุดเบญจมาศมงคล",
+                "description": "รวมหมูนุ่ม 5 สไตล์และซีฟู้ดแบบจุกๆ",
+                "image": "/images/sets/benjamas-mongkol.jpg",
+                "isAvailable": true
+            },
+            {
+                "id": "set_005",
+                "name": "ชุดจักรพรรดิเหนือจันทร์",
+                "description": "เซตเนื้อวากิวคัดพิเศษ 5 ส่วนที่ดีที่สุด",
+                "image": "/images/sets/emperor-wagyu.jpg",
+                "isAvailable": false
+            }
+        ]
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "data": {
+        "hotDeals": [
+            {
+                "id": "deal_001",
+                "name": "มา 4 จ่าย 3",
+                "description": "เฉพาะตัวแม่ที่แต่งตัวจัดเต็มมาทาน",
+                "condition": "มา 4 คน จ่าย 3 คน",
+                "image": "/images/deals/ma-4-pay-3.jpg",
+                "isAvailable": true
+            },
+            {
+                "id": "deal_002",
+                "name": "นาทีทองของตัวมัม",
+                "description": "ลด 20% สำหรับเซตเนื้อพรีเมียม",
+                "condition": "14:00 - 16:00 น.",
+                "discountPercent": 20,
+                "image": "/images/deals/golden-hour-20-percent.jpg",
+                "isAvailable": true
+            },
+            {
+                "id": "deal_003",
+                "name": "โปรฯ เช็คอินถิ่นเจ๊",
+                "description": "เช็คอินเปิดสาธารณะ รับชุดอัญมณีทะเลฟรี 1 ถาด",
+                "image": "/images/deals/checkin-free-seafood.jpg",
+                "isAvailable": true
+            },
+            {
+                "id": "deal_004",
+                "name": "เบิร์ดเดย์ตัวมารดา",
+                "description": "เจ้าของวันเกิดทานฟรี",
+                "condition": "เมื่อมา 5 ท่านขึ้นไป",
+                "image": "/images/deals/birthday-free.jpg",
+                "isAvailable": true
+            },
+            {
+                "id": "deal_005",
+                "name": "สมาชิกเลอค่า",
+                "description": "สะสมครบ 10 ครั้ง รับชุดนารีสโมสรฟรี 1 เซต",
+                "image": "/images/deals/member-reward.jpg",
+                "isAvailable": true
+            }
+        ]
+    }
+}
