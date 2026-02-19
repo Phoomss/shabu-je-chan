@@ -7,7 +7,7 @@ const Footer = () => {
 
         {/* Brand */}
         <a href="#" className="d-flex align-items-center gap-2 text-decoration-none">
-          <img src="./logo.png" alt="" style={{ width: 64, height: 64 }} />
+          <img src="./logo.png" alt="" style={{ width: 80, height: 80 }} />
           <span className="fw-bold text-light">ชาบูเจ๊จันทร์</span>
         </a>
 
