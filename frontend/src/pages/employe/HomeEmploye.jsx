@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CardTable from '../../components/shared/employe/CardTable'
+import CardTable from '../../components/employe/CardTable'
 import mockTables from '../../data/table.json'
 
 const tabs = [
