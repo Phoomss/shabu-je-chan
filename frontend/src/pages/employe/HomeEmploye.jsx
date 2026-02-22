@@ -1,53 +1,21 @@
 import React, { useState } from 'react'
 import CardTable from '../../components/shared/employe/CardTable'
+import mockTables from '../../data/table.json'
 
 const tabs = [
-  { key: 'orders',  icon: 'bi-list-check',   label: 'รายการสั่ง', badge: 1 },
-  { key: 'tables',  icon: 'bi-grid',          label: 'จัดการโต๊ะ' },
-  { key: 'menu',    icon: 'bi-scissors',      label: 'จัดการเมนู' },
+  { key: 'orders', icon: 'bi-list-check', label: 'รายการสั่ง', badge: 1 },
+  { key: 'tables', icon: 'bi-grid', label: 'จัดการโต๊ะ' },
+  { key: 'menu', icon: 'bi-scissors', label: 'จัดการเมนู' },
   { key: 'history', icon: 'bi-clock-history', label: 'ประวัติ' },
-  { key: 'billing', icon: 'bi-credit-card',   label: 'คิดเงิน' },
-]
-
-const mockTables = [
-  {
-    tableNumber: 1,
-    timeAgo: '30 นาทีก่อน',
-    initialStatus: 'preparing',
-    items: [
-      { name: 'คุโรบูตะหน้ามน', qty: 2 },
-      { name: 'สามชั้นชั้นเลิศ', qty: 1 },
-      { name: 'ลูกชิ้นปลาภูเก็ต (น้ำใส)', qty: 1 },
-    ],
-  },
-  {
-    tableNumber: 2,
-    timeAgo: '20 นาทีก่อน',
-    initialStatus: 'waiting',
-    items: [
-      { name: 'ริบอายสายฟาด', qty: 2 },
-      { name: 'กุ้งแม่น้ำจำแลง', qty: 1 },
-      { name: 'ชาเขียวรีฟิลฉบับเจ', qty: 2 },
-    ],
-  },
-  {
-    tableNumber: 3,
-    timeAgo: '60 นาทีก่อน',
-    initialStatus: 'served',
-    items: [
-      { name: 'วากิวจันทร์กระจ่าง (สุดกำลังดี)', qty: 1 },
-      { name: 'ชุดจันทร์ฉาย', qty: 1 },
-      { name: 'น้ำลำไยเนื้อเน้น', qty: 1 },
-    ],
-  },
+  { key: 'billing', icon: 'bi-credit-card', label: 'คิดเงิน' },
 ]
 
 const HomeEmploye = () => {
   const [activeTab, setActiveTab] = useState('orders')
-  const [tables, setTables] = useState(mockTables) 
+  const [tables, setTables] = useState(mockTables.data)
 
   const handleDone = (tableNumber) => {
-    setTables(prev => prev.filter(t => t.tableNumber !== tableNumber)) 
+    setTables(prev => prev.filter(t => t.tableNumber !== tableNumber))
   }
 
   return (
@@ -59,9 +27,8 @@ const HomeEmploye = () => {
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`btn d-flex align-items-center gap-2 rounded-3 px-3 py-2 fw-medium ${
-                activeTab === tab.key ? 'btn-danger' : 'btn-outline-secondary border-1'
-              }`}
+              className={`btn d-flex align-items-center gap-2 rounded-3 px-3 py-2 fw-medium ${activeTab === tab.key ? 'btn-danger' : 'btn-outline-secondary border-1'
+                }`}
             >
               <i className={`bi ${tab.icon}`} />
               {tab.label}
@@ -76,8 +43,8 @@ const HomeEmploye = () => {
       <div className="container-fluid p-4">
         {activeTab === 'orders' && (
           <div className="row g-4">
-            {tables.map((table) => ( 
-              <div className="col-12 col-md-6 col-xl-4" key={table.tableNumber}> 
+            {tables.map((table) => (
+              <div className="col-12 col-md-6 col-xl-4" key={table.tableNumber}>
                 <CardTable
                   {...table}
                   onDone={() => handleDone(table.tableNumber)}

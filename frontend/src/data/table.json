@@ -1,0 +1,34 @@
+{
+  "data": [
+    {
+      "tableNumber": 1,
+      "timeAgo": "30 นาทีก่อน",
+      "initialStatus": "preparing",
+      "items": [
+        { "name": "คุโรบูตะหน้ามน", "qty": 2 },
+        { "name": "สามชั้นชั้นเลิศ", "qty": 1 },
+        { "name": "ลูกชิ้นปลาภูเก็ต (น้ำใส)", "qty": 1 }
+      ]
+    },
+    {
+      "tableNumber": 2,
+      "timeAgo": "20 นาทีก่อน",
+      "initialStatus": "waiting",
+      "items": [
+        { "name": "ริบอายสายฟาด", "qty": 2 },
+        { "name": "กุ้งแม่น้ำจำแลง", "qty": 1 },
+        { "name": "ชาเขียวรีฟิลฉบับเจ", "qty": 2 }
+      ]
+    },
+    {
+      "tableNumber": 3,
+      "timeAgo": "60 นาทีก่อน",
+      "initialStatus": "served",
+      "items": [
+        { "name": "วากิวจันทร์กระจ่าง (สุดกำลังดี)", "qty": 1 },
+        { "name": "ชุดจันทร์ฉาย", "qty": 1 },
+        { "name": "น้ำลำไยเนื้อเน้น", "qty": 1 }
+      ]
+    }
+  ]
+}
