@@ -37,16 +37,6 @@ const Login = () => {
 
     return (
         <div className="min-vh-100 d-flex align-items-center justify-content-center bg-light">
-            <ToastContainer
-                position="top-center"
-                autoClose={3000}
-                hideProgressBar
-                newestOnTop
-                closeOnClick
-                pauseOnHover
-                draggable
-            />
-
             <div className="card border-0 shadow rounded-4 p-5" style={{ width: '100%', maxWidth: 460 }}>
 
                 {/* Logo */}
