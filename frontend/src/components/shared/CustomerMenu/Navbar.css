@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400&display=swap');
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: hsl(0 80% 44%);
+    box-shadow: inset 0 4px 0 rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    font-family: 'Kanit', sans-serif;
+}
+.text-logo {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5px;
+}
+h2{
+    font-size: 14px;
+    font-weight: bold;
+}
+p{
+    font-size: 12px;}
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 10px;
+    gap: 5px;
+}
+
+.logo p {
+    opacity: 0.8;
+}
+
+.image-logo {
+    height: 50px;
+    width: auto;
+}
+
+.btn-call-staff {
+    align-items: center;
+    padding: 8px 12px;
+    background-color: hsl(0deg 0% 100% / 20%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+.btn-call-staff:hover {
+    background-color: hsl(0deg 0% 100% / 30%);
+    cursor: pointer;
+}
+.icon {
+    width: 16px;
+    height: 16px;
+}
+
+/*-------------------alert----------------*/
+.custom-toast {
+    position: fixed;
+    top: 20px;
+    min-width: 316px;
+
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: hsl(107, 48%, 87%);
+    color: #008A2E;
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+
+    font-size: 12px;
+    font-family: 'Kanit', sans-serif;
+
+    animation: slideDown 0.5s ease-out;
+}
+
+.slide-down {
+    top: 20px;
+    animation: slideDownAni 0.5s ease-out forwards;
+}
+
+.slide-up {
+    top: 20px;
+    animation: slideUpAni 0.5s ease-in forwards;
+}
+
+@keyframes slideDownAni {
+    from {
+        top: -100px;
+        opacity: 0;
+    }
+
+    to {
+        top: 20px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideUpAni {
+    from {
+        top: 20px;
+        opacity: 1;
+    }
+
+    to {
+        top: -100px;
+        opacity: 0;
+    }
+}

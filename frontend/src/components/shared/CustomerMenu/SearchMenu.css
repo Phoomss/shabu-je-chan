@@ -1,0 +1,71 @@
+.search-menu-container {
+  padding: 15px;
+  background-color: #f8f9fa; /* สีพื้นหลังอ่อนๆ ให้ดูสบายตา */
+}
+
+/* --- ส่วนช่องค้นหา --- */
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  margin-bottom: 15px;
+  border: 1px solid #e0e0e0;
+}
+
+.search-icon {
+  color: #888;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Kanit', sans-serif; /* ใช้ฟอนต์ที่คุณตั้งไว้ */
+}
+
+/* --- ส่วนปุ่มหมวดหมู่ --- */
+.category-scroll-container {
+  display: flex;
+  gap: 10px;
+
+  overflow-x: auto; /* ทำให้เลื่อนซ้ายขวาได้ */
+  width: 100%;
+  padding-bottom: 5px; /* เผื่อที่ให้ scrollbar (ถ้ามี) */
+  
+  -webkit-overflow-scrolling: touch;
+
+}
+
+/* ซ่อน Scrollbar ให้ดูสะอาดตา (สำหรับ Chrome/Safari) */
+.category-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.category-btn {
+  white-space: nowrap; /* ไม่ให้ข้อความขึ้นบรรทัดใหม่ */
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 20px; /* ขอบมนๆ */
+  font-size: 14px;
+  font-family: 'Kanit', sans-serif;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  flex-shrink: 0;
+}
+
+/* เมื่อปุ่มถูกเลือก (Active) */
+.category-btn.active {
+  background-color: #ff0000; /* สีแดง */
+  color: white;
+  border-color: #ff0000;
+}

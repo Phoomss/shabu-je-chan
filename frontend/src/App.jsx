@@ -7,6 +7,13 @@ import EmployeLayout from './components/layouts/EmployeLayout';
 import HomePage from './pages/web/HomePage';
 import Login from './pages/auth/login';
 
+//customer menu
+import Menu from './pages/customer/Menu';
+import CartPage from './pages/customer/CartPage';
+import TimePage from './pages/customer/TimePage';
+
+
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -18,7 +25,9 @@ const App = () => {
         </Route>
 
         <Route element={<CustomerLayout />}>
-
+          <Route path='/menu' element={<Menu />} />
+          <Route path='/cart' element={<CartPage />} />
+          <Route path='/time' element={<TimePage />} />
         </Route>
 
         <Route element={<AdminLayout />}>
