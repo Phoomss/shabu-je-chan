@@ -6,4 +6,4 @@ const MenuCard = () => {
   )
 }
 
-export default MenuCard
+export default MenuCard 

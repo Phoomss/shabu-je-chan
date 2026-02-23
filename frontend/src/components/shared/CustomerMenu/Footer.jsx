@@ -1,41 +1,70 @@
-import React from 'react'
+import React from 'react';
 import { UtensilsCrossed, ShoppingCart, Clock } from 'lucide-react';
-import './Footer.css';
-import { Link } from 'react-router';
 import { NavLink } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <>
-    <div className='container-footer'>
+    <div 
+      
+      className="fixed-bottom w-100 bg-white d-flex justify-content-around align-items-center"
+      style={{ 
+        boxShadow: 'inset 0 2px 0 rgba(0, 0, 0, 0.1)', 
+        padding: '10px',
+        zIndex: 100,
+        fontFamily: '"Kanit", sans-serif'
+      }}
+    >
 
       <NavLink 
         to="/menu" 
-        className={({ isActive }) => `btn-menu ${isActive ? 'active' : ''}`}
+        className="text-decoration-none d-flex flex-column align-items-center justify-content-center bg-white border-0"
+        style={({ isActive }) => ({
+          color: isActive ? '#ff5722' : '#666666',
+          fontSize: '12px'
+        })}
       >
-        <UtensilsCrossed className='icon'/>
-        <p>เมนู</p>
+        {({ isActive }) => (
+          <>
+            <UtensilsCrossed size={20} color={isActive ? '#ff5722' : '#666666'} />
+            <p className="m-0 mt-1">เมนู</p>
+          </>
+        )}
       </NavLink>
 
       <NavLink   
         to="/cart" 
-        className={({ isActive }) => `btn-menu ${isActive ? 'active' : ''}`}
+        className="text-decoration-none d-flex flex-column align-items-center justify-content-center bg-white border-0"
+        style={({ isActive }) => ({
+          color: isActive ? '#ff5722' : '#666666',
+          fontSize: '12px'
+        })}
       >
-        <ShoppingCart className='icon'/>
-        <p>ตะกร้า</p>
+        {({ isActive }) => (
+          <>
+            <ShoppingCart size={20} color={isActive ? '#ff5722' : '#666666'} />
+            <p className="m-0 mt-1">ตะกร้า</p>
+          </>
+        )}
       </NavLink>
 
       <NavLink
         to="/time"
-        className={({ isActive }) => `btn-menu ${isActive ? 'active' : ''}`}
+        className="text-decoration-none d-flex flex-column align-items-center justify-content-center bg-white border-0"
+        style={({ isActive }) => ({
+          color: isActive ? '#ff5722' : '#666666',
+          fontSize: '12px'
+        })}
       >
-        <Clock className='icon'/>
-        <p>เวลา</p>
+        {({ isActive }) => (
+          <>
+            <Clock size={20} color={isActive ? '#ff5722' : '#666666'} />
+            <p className="m-0 mt-1">เวลา</p>
+          </>
+        )}
       </NavLink>
-    </div>
-    </>
 
+    </div>
   )
 }
 
-export default Footer
+export default Footer;
