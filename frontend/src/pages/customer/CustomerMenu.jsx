@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import Tier from '../../components/shared/CustomerMenu/Tier';
 import SearchMenu from '../../components/shared/CustomerMenu/SearchMenu';
+import { useCart } from '../../contexts/CartContext'; // Import Context
 
 // 1. นำเข้า MenuCard และไฟล์ JSON
 import MenuCard from '../../components/cards/CustomerMenu/MenuCard'; // เช็ค Path ให้ตรงด้วยนะครับ
@@ -9,6 +10,7 @@ import menuDataJson from '../../data/restaurantMenu.json';
 const CustomerMenu = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('ทั้งหมด');
+  const { addToCart } = useCart(); // ดึงฟังก์ชัน addToCart มาใช้
 
   // 2. แปลงข้อมูล JSON ให้เป็น Array ก้อนเดียว และจับคู่ชื่อหมวดหมู่ภาษาไทย
   // ใช้ useMemo เพื่อให้มันคำนวณแค่ครั้งแรกครั้งเดียว ไม่ต้องทำใหม่ทุกครั้งที่พิมพ์ค้นหา
@@ -51,7 +53,7 @@ const CustomerMenu = () => {
       <Tier />
       <div 
         className="customer-menu-page" 
-        style={{ backgroundColor: '#f8f9fa', minHeight: '100vh', paddingBottom: '80px' }} // เผื่อที่ว่างด้านล่างให้ Footer
+        style={{ backgroundColor: '#f8f9fa', minHeight: '100vh', paddingBottom: '80px', fontFamily: '"Kanit", sans-serif' }} // เผื่อที่ว่างด้านล่างให้ Footer
       >
         <SearchMenu 
           searchTerm={searchTerm} 
@@ -69,6 +71,7 @@ const CustomerMenu = () => {
                 key={item.id} 
                 item={item} 
                 categoryName={item.categoryName} 
+                onAddToCart={addToCart} // ส่งฟังก์ชันไปให้ MenuCard เรียกใช้เมื่อกดปุ่มบวก
               />
             ))
           ) : (
@@ -85,6 +88,8 @@ const CustomerMenu = () => {
       </div>
     </>
   )
+  
 }
+
 
 export default CustomerMenu;
