@@ -29,7 +29,7 @@ const CartPage = () => {
             style={{
                 backgroundColor: '#f8f9fa',
                 minHeight: '100vh',
-                paddingBottom: '100px', // เว้นที่ไว้ให้ปุ่มกดยืนยันด้านล่าง
+                paddingBottom: '100px', 
                 fontFamily: '"Kanit", sans-serif'
             }}
         >
@@ -109,7 +109,7 @@ const CartPage = () => {
                         {/* ส่วนสรุปยอดและปุ่มสั่งซื้อ (Fixed Bottom) */}
                         <div
                             className="fixed-bottom bg-white p-3 border-top shadow-lg"
-                            style={{ zIndex: 1050, marginBottom: '60px' }} // ให้อยู่เหนือ Footer หลัก
+                            style={{ zIndex: 1050, marginBottom: '60px' }} 
                         >
                             <div className="d-flex justify-content-between align-items-center mb-3 px-1">
                                 <div>

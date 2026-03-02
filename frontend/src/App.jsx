@@ -7,7 +7,6 @@ import EmployeLayout from './components/layouts/EmployeLayout';
 import HomePage from './pages/web/HomePage';
 import Login from './pages/auth/login';
 
-//customer menu
 import Menu from './pages/customer/CustomerMenu';
 import CartPage from './pages/customer/CartPage';
 import TimePage from './pages/customer/TimePage';

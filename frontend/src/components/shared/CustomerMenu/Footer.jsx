@@ -1,7 +1,7 @@
 import React from 'react';
 import { UtensilsCrossed, ShoppingCart, Clock } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
-import { useCart } from '../../../contexts/CartContext'; // ตรวจสอบ path ให้ถูกนะครับ
+import { useCart } from '../../../contexts/CartContext'; 
 
 const Footer = () => {
   // ดึง totalItems มาจาก Context (ตัวเลขรวมจำนวนจานทั้งหมด)
@@ -11,7 +11,7 @@ const Footer = () => {
     <div 
       className="fixed-bottom w-100 bg-white d-flex justify-content-around align-items-center"
       style={{ 
-        boxShadow: '0 -2px 10px rgba(0, 0, 0, 0.05)', // ปรับเงาให้ดูละมุนขึ้น
+        boxShadow: '0 -2px 10px rgba(0, 0, 0, 0.05)', 
         padding: '10px 0',
         zIndex: 100,
         fontFamily: '"Kanit", sans-serif',
@@ -51,7 +51,7 @@ const Footer = () => {
               position: 'absolute',
               top: '-8px',
               right: '-12px',
-              backgroundColor: '#ff3b30', // สีแดงสดแบบ iOS/Food App
+              backgroundColor: '#ff3b30', 
               color: 'white',
               borderRadius: '50%',
               minWidth: '18px',
@@ -62,7 +62,7 @@ const Footer = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              border: '2px solid white', // ตัดขอบขาวให้ดูเด่นขึ้น
+              border: '2px solid white', 
               boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
             }}>
               {totalItems > 99 ? '99+' : totalItems} 

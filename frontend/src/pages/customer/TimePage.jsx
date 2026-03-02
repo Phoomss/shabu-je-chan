@@ -6,7 +6,7 @@ const TimePage = () => {
     const navigate = useNavigate();
 
     // สมมติเวลาเริ่มต้นคือ 90 นาที (5400 วินาที)
-    // ในอนาคตคุณสามารถดึงค่านี้มาจาก Backend หรือ Context ได้
+    // ในอนาคตสามารถดึงค่านี้มาจาก Backend หรือ Context ได้
     const [timeLeft, setTimeLeft] = useState(5400);
 
     useEffect(() => {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Lock, Plus } from 'lucide-react';
 
-// 1. เพิ่ม onAddToCart เข้าไปใน Props เพื่อรับฟังก์ชันเพิ่มของเข้าตะกร้า
 const MenuCard = ({ item, categoryName, onAddToCart }) => {
     const isAvailable = item.isAvailable;
 
@@ -18,7 +17,7 @@ const MenuCard = ({ item, categoryName, onAddToCart }) => {
                     style={{ width: '100px', height: '100px' }}
                 >
                     <img 
-                        src={item.image || 'https://via.placeholder.com/150'} // เพิ่ม Fallback image เผื่อรูปเสีย
+                        src={item.image || 'https://via.placeholder.com/150'} 
                         alt={item.name} 
                         className="w-100 h-100 object-fit-cover rounded-3" 
                         style={{ opacity: isAvailable ? 1 : 0.6 }} 
@@ -87,7 +86,6 @@ const MenuCard = ({ item, categoryName, onAddToCart }) => {
                             <button 
                                 className="btn rounded-circle p-0 d-flex justify-content-center align-items-center border-0" 
                                 style={{ backgroundColor: '#cc0000', color: 'white', width: '26px', height: '26px' }}
-                                // 2. เปลี่ยนจาก alert เป็นการเรียกใช้ฟังก์ชันเพิ่มของเข้าตะกร้าจริงๆ
                                 onClick={() => onAddToCart(item)}
                             >
                                 <Plus size={16} />
