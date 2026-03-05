@@ -7,6 +7,7 @@ import MenuManage from '../../components/employe/MenuManage'
 import mockTables from '../../data/table.json'
 import mockStatusTables from '../../data/tableStatus.json'
 import HistoryTab from '../../components/employe/Historytab'
+import BillingTab from '../../components/employe/Billingtab'
 
 const tabs = [
   { key: 'orders', icon: <ClipboardList size={16} />, label: 'รายการสั่ง', badge: 1 },
@@ -89,14 +90,13 @@ const HomeEmploye = () => {
         {/* จัดการเมนู */}
         {activeTab === 'menu' && <MenuManage />}
         {activeTab === 'history' && <HistoryTab />}
+        {activeTab === 'billing' && <BillingTab />}
 
-        {/* หน้าอื่น ๆ */}
-        {activeTab !== 'orders' && activeTab !== 'tables' && activeTab !== 'menu' && activeTab !== 'history' && (
-          <div className="text-center text-muted py-5">
-            <Wrench size={48} className="d-block mx-auto mb-2" />
-            หน้านี้อยู่ระหว่างพัฒนา
-          </div>
-        )}
+        {activeTab !== 'orders' && activeTab !== 'tables' &&
+          activeTab !== 'menu' && activeTab !== 'history' &&
+          activeTab !== 'billing' && (
+            <div>...หน้านี้อยู่ระหว่างพัฒนา</div>
+          )}
 
       </div>
     </div>
