@@ -1,12 +1,11 @@
-// TabBar.jsx
-import React from 'react'
+import { ClipboardList, Grid, Scissors, History, CreditCard, Wrench } from 'lucide-react'
 
 const tabs = [
-  { key: 'orders',  icon: 'bi-list-check',   label: 'รายการสั่ง', badge: 1 },
-  { key: 'tables',  icon: 'bi-grid',          label: 'จัดการโต๊ะ' },
-  { key: 'menu',    icon: 'bi-scissors',      label: 'จัดการเมนู' },
-  { key: 'history', icon: 'bi-clock-history', label: 'ประวัติ' },
-  { key: 'billing', icon: 'bi-credit-card',   label: 'คิดเงิน' },
+  { key: 'orders',  icon: <ClipboardList size={16} />, label: 'รายการสั่ง', badge: 1 },
+  { key: 'tables',  icon: <Grid size={16} />,          label: 'จัดการโต๊ะ' },
+  { key: 'menu',    icon: <Scissors size={16} />,      label: 'จัดการเมนู' },
+  { key: 'history', icon: <History size={16} />,       label: 'ประวัติ' },
+  { key: 'billing', icon: <CreditCard size={16} />,    label: 'คิดเงิน' },
 ]
 
 const TabBar = ({ activeTab, onTabChange }) => {
@@ -21,7 +20,7 @@ const TabBar = ({ activeTab, onTabChange }) => {
               activeTab === tab.key ? 'btn-danger' : 'btn-outline-secondary border-1'
             }`}
           >
-            <i className={`bi ${tab.icon}`} />
+           <Wrench size={48} className="text-muted d-block mx-auto mb-2" />
             {tab.label}
             {tab.badge && (
               <span className="badge bg-white text-danger rounded-pill ms-1">{tab.badge}</span>

@@ -1,0 +1,16 @@
+{
+  "data": [
+    { "tableNumber": 1, "seats": 2, "status": "occupied" },
+    { "tableNumber": 2, "seats": 2, "status": "occupied" },
+    { "tableNumber": 3, "seats": 2, "status": "occupied" },
+    { "tableNumber": 4, "seats": 2, "status": "available" },
+    { "tableNumber": 5, "seats": 4, "status": "available" },
+    { "tableNumber": 6, "seats": 4, "status": "available" },
+    { "tableNumber": 7, "seats": 4, "status": "available" },
+    { "tableNumber": 8, "seats": 4, "status": "available" },
+    { "tableNumber": 9, "seats": 6, "status": "available" },
+    { "tableNumber": 10, "seats": 6, "status": "available" },
+    { "tableNumber": 11, "seats": 6, "status": "available" },
+    { "tableNumber": 12, "seats": 6, "status": "available" }
+  ]
+}

@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import CardTable from '../../components/employe/CardTable'
 import mockTables from '../../data/table.json'
+import mockStatusTables from '../../data/tableStatus.json'
+import CardTableStatus from '../../components/employe/CardTableStatus'
+import TableLegend from '../../components/employe/TableLegend'
 
 const tabs = [
   { key: 'orders', icon: 'bi-list-check', label: 'รายการสั่ง', badge: 1 },
@@ -13,9 +16,18 @@ const tabs = [
 const HomeEmploye = () => {
   const [activeTab, setActiveTab] = useState('orders')
   const [tables, setTables] = useState(mockTables.data)
+  const [statusTables, setStatusTables] = useState(mockStatusTables.data)
 
   const handleDone = (tableNumber) => {
     setTables(prev => prev.filter(t => t.tableNumber !== tableNumber))
+  }
+
+  const handleChangeStatus = (tableNumber) => {
+    setStatusTables(prev => prev.map(t => {
+      if (t.tableNumber !== tableNumber) return t
+      const next = { available: 'occupied', occupied: 'reserved', reserved: 'available' }
+      return { ...t, status: next[t.status] }
+    }))
   }
 
   return (
@@ -51,6 +63,23 @@ const HomeEmploye = () => {
                 />
               </div>
             ))}
+          </div>
+        )}
+
+        {activeTab === 'tables' && ( 
+          <div>
+            <TableLegend />
+            <div className="row g-3">
+              {statusTables.map(t => (
+                <div className="col-6 col-md-4 col-xl-3" key={t.tableNumber}>
+                  <CardTableStatus
+                    {...t}
+                    onChangeStatus={() => handleChangeStatus(t.tableNumber)}
+                    onCopyLink={() => navigator.clipboard.writeText(`/order/${t.tableNumber}`)}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         )}
 
