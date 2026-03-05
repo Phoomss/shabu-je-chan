@@ -6,13 +6,14 @@ import TableLegend from '../../components/employe/TableLegend'
 import MenuManage from '../../components/employe/MenuManage'
 import mockTables from '../../data/table.json'
 import mockStatusTables from '../../data/tableStatus.json'
+import HistoryTab from '../../components/employe/Historytab'
 
 const tabs = [
-  { key: 'orders',  icon: <ClipboardList size={16} />, label: 'รายการสั่ง', badge: 1 },
-  { key: 'tables',  icon: <Grid size={16} />,          label: 'จัดการโต๊ะ' },
-  { key: 'menu',    icon: <Scissors size={16} />,      label: 'จัดการเมนู' },
-  { key: 'history', icon: <History size={16} />,       label: 'ประวัติ' },
-  { key: 'billing', icon: <CreditCard size={16} />,    label: 'คิดเงิน' },
+  { key: 'orders', icon: <ClipboardList size={16} />, label: 'รายการสั่ง', badge: 1 },
+  { key: 'tables', icon: <Grid size={16} />, label: 'จัดการโต๊ะ' },
+  { key: 'menu', icon: <Scissors size={16} />, label: 'จัดการเมนู' },
+  { key: 'history', icon: <History size={16} />, label: 'ประวัติ' },
+  { key: 'billing', icon: <CreditCard size={16} />, label: 'คิดเงิน' },
 ]
 
 const HomeEmploye = () => {
@@ -42,9 +43,8 @@ const HomeEmploye = () => {
             <button
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
-              className={`btn d-flex align-items-center gap-2 rounded-3 px-3 py-2 fw-medium ${
-                activeTab === tab.key ? 'btn-danger' : 'btn-outline-secondary border-1'
-              }`}
+              className={`btn d-flex align-items-center gap-2 rounded-3 px-3 py-2 fw-medium ${activeTab === tab.key ? 'btn-danger' : 'btn-outline-secondary border-1'
+                }`}
             >
               {tab.icon}
               {tab.label}
@@ -88,9 +88,10 @@ const HomeEmploye = () => {
 
         {/* จัดการเมนู */}
         {activeTab === 'menu' && <MenuManage />}
+        {activeTab === 'history' && <HistoryTab />}
 
         {/* หน้าอื่น ๆ */}
-        {activeTab !== 'orders' && activeTab !== 'tables' && activeTab !== 'menu' && (
+        {activeTab !== 'orders' && activeTab !== 'tables' && activeTab !== 'menu' && activeTab !== 'history' && (
           <div className="text-center text-muted py-5">
             <Wrench size={48} className="d-block mx-auto mb-2" />
             หน้านี้อยู่ระหว่างพัฒนา
