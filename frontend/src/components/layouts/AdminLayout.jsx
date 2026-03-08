@@ -1,9 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { Outlet } from 'react-router';
+import Navbar from '../shared/admin/Navbar';
 
 const AdminLayout = () => {
   return (
-    <div>AdminLayout</div>
-  )
-}
+    <div className="min-h-screen" style={{ backgroundColor: '#fdfdfd' }}>
+      <Navbar />
 
-export default AdminLayout
+      <main>
+        <Outlet />
+      </main>
+    </div>
+  );
+};
+
+export default AdminLayout;

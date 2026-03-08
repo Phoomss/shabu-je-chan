@@ -6,6 +6,7 @@ import AdminLayout from './components/layouts/AdminLayout';
 import EmployeLayout from './components/layouts/EmployeLayout';
 import HomePage from './pages/web/HomePage';
 import Login from './pages/auth/login';
+import AdminDashborad from './pages/admin/AdminDashborad';
 
 const App = () => {
   return (
@@ -21,8 +22,8 @@ const App = () => {
 
         </Route>
 
-        <Route element={<AdminLayout />}>
-
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashborad />} />
         </Route>
 
         <Route element={<EmployeLayout />}>
