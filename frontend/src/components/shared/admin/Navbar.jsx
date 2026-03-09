@@ -23,7 +23,7 @@ const Navbar = () => {
         </div>
         <div>
           <button className="btn btn-outline-light rounded-pill px-3 py-1 d-flex align-items-center gap-2"
-            style={{ fontSize: '0.85rem', borderColor: '#444' }}>
+            style={{ fontSize: '0.85rem', borderColor: '#3b3939' }}>
             <i className="bi bi-box-arrow-right"></i>
             <span>ออกจากระบบ</span>
           </button>
