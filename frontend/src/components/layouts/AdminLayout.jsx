@@ -4,7 +4,7 @@ import Navbar from '../shared/admin/Navbar';
 
 const AdminLayout = () => {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#fdfdfd' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#ffffff' }}>
       <Navbar />
 
       <main>
@@ -14,4 +14,4 @@ const AdminLayout = () => {
   );
 };
 
-export default AdminLayout;
+export default AdminLayout; 
