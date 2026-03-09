@@ -1,0 +1,104 @@
+{
+  "data": [
+    {
+      "tableNumber": 1,
+      "timeAgo": "30 นาทีก่อน",
+      "status": "preparing",
+      "items": [
+        { "name": "คุโรบูตะหน้ามน", "qty": 2 },
+        { "name": "สามชั้นชั้นเลิศ", "qty": 1 },
+        { "name": "ลูกชิ้นปลาภูเก็ต", "qty": 1 }
+      ]
+    },
+    {
+      "tableNumber": 2,
+      "timeAgo": "20 นาทีก่อน",
+      "status": "waiting",
+      "items": [
+        { "name": "ริบอายสายฟาด", "qty": 2 },
+        { "name": "กุ้งแม่น้ำจำแลง", "qty": 1 },
+        { "name": "ชาเขียวรีฟิลฉบับเจ๊", "qty": 2 }
+      ]
+    },
+    {
+      "tableNumber": 3,
+      "timeAgo": "60 นาทีก่อน",
+      "status": "served",
+      "items": [
+        { "name": "วากิวจันทร์กระจ่าง (A5)", "qty": 1 },
+        { "name": "ชุดจันทร์ฉาย", "qty": 1 },
+        { "name": "น้ำลำไยเนื้อเน้น", "qty": 1 }
+      ]
+    },
+    {
+      "tableNumber": 4,
+      "timeAgo": "10 นาทีก่อน",
+      "status": "preparing",
+      "items": [
+        { "name": "สันคอพรีเมียม", "qty": 2 },
+        { "name": "สามชั้นชั้นเลิศ", "qty": 1 },
+        { "name": "อัญชันมะนาวเลอค่า", "qty": 2 }
+      ]
+    },
+    {
+      "tableNumber": 5,
+      "timeAgo": "45 นาทีก่อน",
+      "status": "waiting",
+      "items": [
+        { "name": "เนื้อใบพายประกายแสง", "qty": 1 },
+        { "name": "ปลาหมึกคริสตัล", "qty": 2 },
+        { "name": "น้ำเก๊กฮวยดับร้อน", "qty": 1 }
+      ]
+    },
+    {
+      "tableNumber": 6,
+      "timeAgo": "15 นาทีก่อน",
+      "status": "preparing",
+      "items": [
+        { "name": "เสือร้องไห้ฉบับตัวแม่", "qty": 3 },
+        { "name": "ลูกชิ้นปลาภูเก็ต", "qty": 1 },
+        { "name": "น้ำกระเจี๊ยบริมจันทร์", "qty": 2 }
+      ]
+    },
+    {
+      "tableNumber": 7,
+      "timeAgo": "25 นาทีก่อน",
+      "status": "served",
+      "items": [
+        { "name": "ชุดเบญจมาศมงคล", "qty": 1 },
+        { "name": "หอยเชลล์มณีเด้ง", "qty": 1 },
+        { "name": "น้ำเปล่าบริสุทธิ์", "qty": 3 }
+      ]
+    },
+    {
+      "tableNumber": 8,
+      "timeAgo": "5 นาทีก่อน",
+      "status": "preparing",
+      "items": [
+        { "name": "สันนอกจักรพรรดิ", "qty": 2 },
+        { "name": "กุ้งแก้วแวววาว", "qty": 1 },
+        { "name": "ชาเขียวรีฟิลฉบับเจ๊", "qty": 2 }
+      ]
+    },
+    {
+      "tableNumber": 9,
+      "timeAgo": "50 นาทีก่อน",
+      "status": "waiting",
+      "items": [
+        { "name": "หมูนุ่มสลบเหมือด", "qty": 2 },
+        { "name": "หมูเด้งดั่งดวงใจ", "qty": 1 },
+        { "name": "น้ำลำไยเนื้อเน้น", "qty": 2 }
+      ]
+    },
+    {
+      "tableNumber": 10,
+      "timeAgo": "35 นาทีก่อน",
+      "status": "served",
+      "items": [
+        { "name": "วากิวจันทร์กระจ่าง (A5)", "qty": 1 },
+        { "name": "ชุดจันทร์พันดาว", "qty": 1 },
+        { "name": "น้ำกระเจี๊ยบริมจันทร์", "qty": 2 }
+      ]
+    }
+  ]
+}

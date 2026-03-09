@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { toast } from 'react-toastify'
+import { Clock, ChevronRight } from 'lucide-react'
 
 const statusConfig = {
     preparing: { label: 'กำลังเตรียม', badgeClass: 'text-danger bg-danger bg-opacity-10' },
@@ -46,7 +47,6 @@ const CardTable = ({ tableNumber = 1, timeAgo = '30 นาทีก่อน', i
 
     return (
         <div className="card border-0 shadow-sm rounded-4 p-3 h-100">
-
             {/* Header */}
             <div className="d-flex justify-content-between align-items-center mb-2">
                 <h6 className="fw-bold mb-0">โต๊ะ {tableNumber}</h6>
@@ -54,8 +54,8 @@ const CardTable = ({ tableNumber = 1, timeAgo = '30 นาทีก่อน', i
             </div>
 
             {/* Time */}
-            <div className="text-muted small mb-3">
-                <i className="bi bi-clock me-1" />
+            <div className="text-muted small mb-3 d-flex align-items-center gap-1">
+                <Clock size={13} />
                 {timeAgo}
             </div>
 
@@ -69,14 +69,15 @@ const CardTable = ({ tableNumber = 1, timeAgo = '30 นาทีก่อน', i
                 ))}
             </div>
 
+            {/* Footer */}
             <div className="d-flex justify-content-between align-items-center mt-2">
                 <span className="text-muted small">-</span>
                 <button
-                    className="btn btn-danger rounded-3 px-4"
+                    className="btn btn-danger rounded-3 px-4 d-flex align-items-center gap-1"
                     onClick={handleAction}
-                    // disabled={action.next === null}
+                    disabled={action.next === null}
                 >
-                    {action.label} <i className="bi bi-chevron-right ms-1" />
+                    {action.label} <ChevronRight size={16} />
                 </button>
             </div>
         </div>
