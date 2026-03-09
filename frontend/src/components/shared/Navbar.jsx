@@ -67,7 +67,7 @@ const Navbar = () => {
               <i className="bi bi-person me-1" />
               เข้าสู่ระบบ
             </Link>
-            <Link to="/apply" className="btn btn-danger rounded-3 px-3">
+            <Link to="/employes/home" className="btn btn-danger rounded-3 px-3">
               <i className="bi bi-briefcase me-1" />
               พนักงาน
             </Link>
