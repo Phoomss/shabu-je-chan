@@ -43,7 +43,7 @@ const Navbar = () => {
               className="mb-0 text-secondary"
               style={{ fontSize: "0.75rem" }}
             >
-              แดชบอร์ดแอดมิน
+              แดชบอร์ดพนักงาน
             </p>
           </div>
 
