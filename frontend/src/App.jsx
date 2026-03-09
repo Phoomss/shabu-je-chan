@@ -6,6 +6,7 @@ import AdminLayout from './components/layouts/AdminLayout';
 import EmployeLayout from './components/layouts/EmployeLayout';
 import HomePage from './pages/web/HomePage';
 import Login from './pages/auth/login';
+import HomeEmploye from './pages/employe/HomeEmploye';
 import { ToastContainer } from 'react-toastify';
 
 const App = () => {
@@ -36,7 +37,7 @@ const App = () => {
         </Route>
 
         <Route element={<EmployeLayout />}>
-
+          <Route path='/employes/home' element={<HomeEmploye />} />
         </Route>
 
       </Routes>
