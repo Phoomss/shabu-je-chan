@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
+import {useNavigate} from 'react-router'
 
 const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
 
     const toastConfig = {
         style: {
@@ -29,6 +31,7 @@ const Login = () => {
             setLoading(false)
             if (username === 'admin' && password === '1234') {
                 toast.success('เข้าสู่ระบบสำเร็จ ยินดีต้อนรับ!', { ...toastConfig, icon: '✅' })
+                navigate('/admin')
             } else {
                 toast.error('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง', { ...toastConfig, icon: '🔐' })
             }
