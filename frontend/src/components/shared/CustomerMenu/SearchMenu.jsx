@@ -2,7 +2,20 @@ import React from 'react';
 import { Search } from 'lucide-react';
 
 const SearchMenu = ({ searchTerm, setSearchTerm, activeCategory, setActiveCategory }) => {
-    const categories = ['ทั้งหมด', 'ชุดซิกเนเจอร์', 'เนื้อพรีเมียม', 'หมูนุ่ม', 'อาหารทะเล', 'ของว่าง', 'ซุป', 'น้ำจิ้ม', 'เครื่องดื่ม', 'ของหวาน'];
+    // ปรับรายการหมวดหมู่ให้ตรงกับ categoryMap ใน CustomerMenu.jsx
+    const categories = [
+        'ทั้งหมด', 
+        'โปรโมชั่นเด็ด', // เพิ่มใหม่จาก restaurantHotDeals.json
+        'ชุดเซตสุดคุ้ม', // ปรับชื่อให้ตรงกับ restauranSetMenu.json
+        'เนื้อพรีเมียม', 
+        'หมูนุ่ม', 
+        'อาหารทะเล', 
+        'ของว่าง', 
+        'ซุป', 
+        'น้ำจิ้ม', 
+        'เครื่องดื่ม', 
+        'ของหวาน'
+    ];
 
     return (
         <>
@@ -36,6 +49,7 @@ const SearchMenu = ({ searchTerm, setSearchTerm, activeCategory, setActiveCatego
                 className="p-3" 
                 style={{ backgroundColor: '#f8f9fa' }}
             >
+                {/* ช่องค้นหา */}
                 <div 
                     className="d-flex align-items-center bg-white mb-3" 
                     style={{
@@ -48,7 +62,7 @@ const SearchMenu = ({ searchTerm, setSearchTerm, activeCategory, setActiveCatego
                     <Search size={20} color="#888" style={{ marginRight: '10px' }} />
                     <input
                         type="text"
-                        placeholder="ค้นหาเมนูอร่อย..."
+                        placeholder="ค้นหาเมนูหรือโปรโมชั่น..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="custom-search-input w-100 border-0"
@@ -60,6 +74,7 @@ const SearchMenu = ({ searchTerm, setSearchTerm, activeCategory, setActiveCatego
                     />
                 </div>
 
+                {/* แถบเลือกหมวดหมู่ */}
                 <div 
                     className="d-flex w-100 custom-scrollbar"
                     style={{
@@ -86,9 +101,11 @@ const SearchMenu = ({ searchTerm, setSearchTerm, activeCategory, setActiveCatego
                                     cursor: 'pointer',
                                     transition: 'all 0.3s ease',
                                     
-                                    backgroundColor: isActive ? '#ff0000' : 'white',
+                                    // เปลี่ยนสีเป็นโทนแดงตามสไตล์ร้าน "ชับบูเจ๊จันทร์"
+                                    backgroundColor: isActive ? '#d32f2f' : 'white',
                                     color: isActive ? 'white' : '#555',
-                                    border: `1px solid ${isActive ? '#ff0000' : '#ddd'}`
+                                    border: `1px solid ${isActive ? '#d32f2f' : '#ddd'}`,
+                                    boxShadow: isActive ? '0 2px 8px rgba(211, 47, 47, 0.3)' : 'none'
                                 }}
                             >
                                 {category}
