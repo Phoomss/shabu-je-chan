@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
-import {useNavigate} from 'react-router'
+import { useNavigate } from 'react-router'
 
 const Login = () => {
     const [username, setUsername] = useState('')
@@ -32,6 +32,9 @@ const Login = () => {
             if (username === 'admin' && password === '1234') {
                 toast.success('เข้าสู่ระบบสำเร็จ ยินดีต้อนรับ!', { ...toastConfig, icon: '✅' })
                 navigate('/admin')
+            } if (username === 'employe' && password === '1234') {
+                toast.success('เข้าสู่ระบบสำเร็จ ยินดีต้อนรับ!', { ...toastConfig, icon: '✅' })
+                navigate('/employes/home')
             } else {
                 toast.error('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง', { ...toastConfig, icon: '🔐' })
             }
@@ -105,6 +108,9 @@ const Login = () => {
 
                 <p className="text-center text-muted small mt-3 mb-0">
                     Demo: ใช้ <span className="fw-semibold text-dark">admin</span> / <span className="fw-semibold text-dark">1234</span>
+                </p>
+                <p className="text-center text-muted small mt-3 mb-0">
+                    Demo: ใช้ <span className="fw-semibold text-dark">employe</span> / <span className="fw-semibold text-dark">1234</span>
                 </p>
 
             </div>
