@@ -23,7 +23,7 @@ const Footer = () => {
         to="/menu" 
         className="text-decoration-none d-flex flex-column align-items-center justify-content-center"
         style={({ isActive }) => ({
-          color: isActive ? '#ff5722' : '#666666',
+          color: isActive ? '#c82333' : '#666666',
           fontSize: '12px',
           flex: 1
         })}
@@ -37,7 +37,7 @@ const Footer = () => {
         to="/cart" 
         className="text-decoration-none d-flex flex-column align-items-center justify-content-center"
         style={({ isActive }) => ({
-          color: isActive ? '#ff5722' : '#666666',
+          color: isActive ? '#c82333' : '#666666',
           fontSize: '12px',
           flex: 1
         })}
@@ -50,9 +50,9 @@ const Footer = () => {
             <span style={{
               position: 'absolute',
               top: '-8px',
-              right: '-12px',
-              backgroundColor: '#ff3b30', 
-              color: 'white',
+              right: '-22px',
+              backgroundColor: 'hsl(48 96% 50%)', 
+              color: 'black',
               borderRadius: '50%',
               minWidth: '18px',
               height: '18px',
@@ -62,7 +62,6 @@ const Footer = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              border: '2px solid white', 
               boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
             }}>
               {totalItems > 99 ? '99+' : totalItems} 
@@ -77,7 +76,7 @@ const Footer = () => {
         to="/time"
         className="text-decoration-none d-flex flex-column align-items-center justify-content-center"
         style={({ isActive }) => ({
-          color: isActive ? '#ff5722' : '#666666',
+          color: isActive ? '#c82333' : '#666666',
           fontSize: '12px',
           flex: 1
         })}

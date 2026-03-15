@@ -1,128 +1,169 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, AlertCircle, CheckCircle2 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { Clock, Loader2, Clock3 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const TimePage = () => {
-    const navigate = useNavigate();
+    // 105 นาที = 6300 วินาที
+    const TOTAL_TIME = 6300; 
+    const [timeLeft, setTimeLeft] = useState(TOTAL_TIME);
+    const location = useLocation();
+    
+    // --- จุดที่แก้ไข: ย้าย Logic มารวมตอนตั้งค่าเริ่มต้น (Lazy Initialization) ---
+const [orders] = useState(() => {        // 1. ดึงข้อมูลเก่าจาก LocalStorage
+        const savedOrders = localStorage.getItem('shabuJeChanOrders');
+        let currentOrders = savedOrders     ? JSON.parse(savedOrders) : [
+            {
+                id: 'ORD-MOCK-1',
+                timestamp: '15:32',
+                status: 'preparing', 
+                items: [
+                    { id: 'p1', name: 'คุโรบูตะหน้ามน', quantity: 2, price: null },
+                    { id: 'p2', name: 'สามชั้นชั้นเลิศ', quantity: 1, price: null },
+                    { id: 'p3', name: 'ลูกชิ้นปลาภูเก็ต', quantity: 1, price: null }
+                ]
+            }
+        ];
 
-    // สมมติเวลาเริ่มต้นคือ 90 นาที (5400 วินาที)
-    // ในอนาคตสามารถดึงค่านี้มาจาก Backend หรือ Context ได้
-    const [timeLeft, setTimeLeft] = useState(5400);
+        // 2. ถ้ารับออเดอร์ใหม่มาจาก CartPage (ผ่าน location.state)
+        if (location.state && location.state.newOrder) {
+            const newOrder = location.state.newOrder;
+            
+            // เช็คว่ายังไม่มีออเดอร์นี้ (ป้องกันการแอดซ้ำ)
+            if (!currentOrders.some(o => o.id === newOrder.id)) {
+                currentOrders = [...currentOrders, newOrder];
+                // บันทึกลง LocalStorage ทันที
+                localStorage.setItem('shabuJeChanOrders', JSON.stringify(currentOrders));
+            }
+        }
 
+        // คืนค่ากลับไปเป็น State เริ่มต้น (ทำแค่ครั้งเดียวตอนโหลดหน้า)
+        return currentOrders;
+    });
+
+    // --- เคลียร์ location.state ทิ้ง เพื่อป้องกันการแอดซ้ำเวลากดปุ่ม Refresh หน้าเว็บ ---
     useEffect(() => {
-        // ระบบนับถอยหลัง
-        if (timeLeft <= 0) return;
+        if (location.state && location.state.newOrder) {
+            window.history.replaceState({}, document.title);
+        }
+    }, [location.state]); // ไม่มีการใช้ setOrders ใน useEffect อีกต่อไป!
 
+
+    // ระบบนับถอยหลัง
+    useEffect(() => {
+        if (timeLeft <= 0) return;
         const timer = setInterval(() => {
             setTimeLeft((prev) => prev - 1);
         }, 1000);
-
         return () => clearInterval(timer);
     }, [timeLeft]);
 
-    // ฟังก์ชันแปลงวินาทีเป็นรูปแบบ HH:MM:SS
+    // แปลงเวลาให้เป็น นาที:วินาที (เช่น 74:50)
     const formatTime = (seconds) => {
-        const h = Math.floor(seconds / 3600);
-        const m = Math.floor((seconds % 3600) / 60);
+        const m = Math.floor(seconds / 60);
         const s = seconds % 60;
-        return `${h > 0 ? h + ':' : ''}${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
     };
 
-    // คำนวณเปอร์เซ็นต์สำหรับ Progress Bar (สมมติเต็ม 90 นาที)
-    const percentage = (timeLeft / 5400) * 100;
+    // คำนวณเปอร์เซ็นต์ของเวลาที่ผ่านไป
+const progressPercent = (timeLeft / TOTAL_TIME) * 100;
+    // ฟังก์ชันสำหรับแสดง Badge สถานะ
+    const renderStatusBadge = (status) => {
+        switch(status) {
+            case 'preparing':
+                return (
+                    <div style={{ backgroundColor: '#FCE8E8', color: '#dc3545', padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <Loader2 size={14} className="spinner-border-sm" style={{ animation: 'spin 2s linear infinite' }} /> กำลังเตรียม
+                    </div>
+                );
+            case 'pending':
+                return (
+                    <div style={{ backgroundColor: '#FFF4CE', color: '#D4A017', padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <Clock3 size={14} /> รอรับออเดอร์
+                    </div>
+                );
+            case 'served':
+                return (
+                    <div style={{ backgroundColor: '#E8F5E9', color: '#28A745', padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '500' }}>
+                        เสิร์ฟแล้ว
+                    </div>
+                );
+            default:
+                return null;
+        }
+    };
 
     return (
         <div
             className="time-page"
-            style={{
-                backgroundColor: '#f8f9fa',
-                minHeight: '100vh',
-                fontFamily: '"Kanit", sans-serif',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                padding: '20px'
-            }}
+            style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingBottom: '120px', fontFamily: '"Kanit", sans-serif' }}
         >
-            {/* ส่วนหัว */}
-            <div className="text-center mt-4 mb-5">
-                <h2 className="fw-bold" style={{ color: '#333' }}>เวลาในการทาน</h2>
-                <p className="text-muted">โต๊ะของคุณเริ่มทานเมื่อ 18:30 น.</p>
-            </div>
-
-            {/* วงกลมแสดงเวลา */}
-            <div
-                className="position-relative d-flex justify-content-center align-items-center mb-5"
-                style={{
-                    width: '250px',
-                    height: '250px',
-                    borderRadius: '50%',
-                    background: `conic-gradient(${timeLeft < 600 ? '#ff3b30' : '#cc0000'} ${percentage}%, #eee 0)`,
-                    boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
-                }}
-            >
-                <div
-                    className="bg-white d-flex flex-column justify-content-center align-items-center"
-                    style={{
-                        width: '220px',
-                        height: '220px',
-                        borderRadius: '50%'
-                    }}
+            <div className="p-3">
+                {/* 1. การ์ดเวลา (Timer Card) */}
+                <div 
+                    className="text-center rounded-4 p-4 mb-4 shadow-sm"
+                    style={{ backgroundColor: '#FDF8F8', border: '1px solid #faecec' }}
                 >
-                    <Clock size={32} className="mb-2" style={{ color: timeLeft < 600 ? '#ff3b30' : '#cc0000' }} />
-                    <h1
-                        className="m-0 fw-bold"
-                        style={{
-                            fontSize: '48px',
-                            color: timeLeft < 600 ? '#ff3b30' : '#333'
-                        }}
-                    >
+                    <div className="d-flex justify-content-center align-items-center mb-2">
+                        <div className="bg-danger rounded-circle d-flex justify-content-center align-items-center" style={{ width: '40px', height: '40px' }}>
+                            <Clock color="white" size={24} />
+                        </div>
+                    </div>
+                    <h6 className="text-muted fw-bold mb-1" style={{ fontSize: '14px' }}>เวลาที่เหลือ</h6>
+                    <h1 className="fw-bold text-danger m-0 mb-2" style={{ fontSize: '64px', letterSpacing: '1px' }}>
                         {formatTime(timeLeft)}
                     </h1>
-                    <p className="text-muted m-0">นาทีที่เหลือ</p>
+                    <p className="text-muted mb-3" style={{ fontSize: '14px' }}>ระยะเวลาบุฟเฟต์ 105 นาที</p>
+                    
+                    {/* Progress Bar */}
+                    <div className="progress" style={{ height: '8px', borderRadius: '10px', backgroundColor: '#F0F0F0' }}>
+                        <div 
+                            className="progress-bar bg-danger" 
+                            role="progressbar" 
+                            style={{ width: `${progressPercent}%`, borderRadius: '10px' }} 
+                            aria-valuenow={progressPercent} 
+                            aria-valuemin="0" 
+                            aria-valuemax="100"
+                        ></div>
+                    </div>
                 </div>
-            </div>
 
-            {/* การ์ดแจ้งเตือนสถานะ */}
-            <div
-                className="card border-0 shadow-sm p-4 w-100"
-                style={{ borderRadius: '20px', maxWidth: '400px' }}
-            >
-                {timeLeft > 600 ? (
-                    <div className="d-flex align-items-center gap-3 text-success">
-                        <CheckCircle2 size={24} />
-                        <div>
-                            <p className="m-0 fw-bold">ทานได้ยาวๆ เลยค่ะ</p>
-                            <small className="text-muted">ยังมีเวลาเหลือเฟือสำหรับการสั่งเพิ่ม</small>
-                        </div>
-                    </div>
-                ) : timeLeft > 0 ? (
-                    <div className="d-flex align-items-center gap-3 text-warning">
-                        <AlertCircle size={24} />
-                        <div>
-                            <p className="m-0 fw-bold">ใกล้หมดเวลาแล้วนะคะ</p>
-                            <small className="text-muted">เร่งมือหน่อยนะคะ เหลือไม่ถึง 10 นาทีแล้ว</small>
-                        </div>
-                    </div>
-                ) : (
-                    <div className="d-flex align-items-center gap-3 text-danger">
-                        <AlertCircle size={24} />
-                        <div>
-                            <p className="m-0 fw-bold">หมดเวลาแล้วค่ะ</p>
-                            <small className="text-muted">ขอบคุณที่มาใช้บริการร้านเจ๊จันทร์นะคะ</small>
-                        </div>
-                    </div>
-                )}
-            </div>
+                {/* 2. สถานะรายการสั่ง (Order Status Section) */}
+                <div className="mb-3">
+                    <h5 className="fw-bold m-0" style={{ fontSize: '18px' }}>สถานะรายการสั่ง</h5>
+                </div>
 
-            {/* ปุ่มกดกลับไปสั่งอาหาร */}
-            <button
-                onClick={() => navigate('/menu')}
-                className="btn btn-outline-dark mt-auto mb-5 px-5 py-2"
-                style={{ borderRadius: '25px', fontWeight: 'bold' }}
-            >
-                กลับไปหน้าเมนู
-            </button>
+                {/* แสดงรายการ Order จากใหม่ไปเก่า (Reverse) */}
+                {[...orders].reverse().map((order) => (
+                    <div key={order.id} className="card border p-3 mb-3 rounded-4 shadow-sm" style={{ borderColor: '#EAEAEA' }}>
+                        {/* Header ของแต่ละออเดอร์ */}
+                        <div className="d-flex justify-content-between align-items-center mb-3 pb-2 border-bottom">
+                            <span className="text-muted" style={{ fontSize: '13px' }}>{order.timestamp}</span>
+                            {renderStatusBadge(order.status)}
+                        </div>
+
+                        {/* รายการอาหารในออเดอร์ */}
+                        <div>
+                            {order.items.map((item, index) => (
+                                <div key={index} className="d-flex justify-content-between align-items-center mb-2">
+                                    <div style={{ fontSize: '15px' }}>
+                                        {item.name} <span className="text-muted mx-1">x{item.quantity}</span>
+                                    </div>
+                                    <div className="text-muted" style={{ fontSize: '14px' }}>
+                                        {item.price ? `${(item.price * item.quantity).toLocaleString()} .-` : 'NaN .-'}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                ))}
+            </div>
+            
+            {/* CSS สำหรับ Animation หมุนของ Loader */}
+            <style>
+                {`
+                    @keyframes spin { 100% { transform: rotate(360deg); } }
+                `}
+            </style>
         </div>
     );
 };
