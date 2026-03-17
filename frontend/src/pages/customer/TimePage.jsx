@@ -7,7 +7,6 @@ const TimePage = () => {
     const TOTAL_TIME = 6300;
     const [timeLeft, setTimeLeft] = useState(TOTAL_TIME);
     const location = useLocation();
-    const { tableNumber } = useParams()
 
     // --- จุดที่แก้ไข: ย้าย Logic มารวมตอนตั้งค่าเริ่มต้น (Lazy Initialization) ---
     const [orders] = useState(() => {        // 1. ดึงข้อมูลเก่าจาก LocalStorage
@@ -98,9 +97,6 @@ const TimePage = () => {
             className="time-page"
             style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingBottom: '120px', fontFamily: '"Kanit", sans-serif' }}
         >
-            <h6 className="text-muted fw-bold mb-1" style={{ fontSize: '14px' }}>
-                โต๊ะ {tableNumber} — เวลาที่เหลือ
-            </h6>
             <div className="p-3">
                 {/* 1. การ์ดเวลา (Timer Card) */}
                 <div
