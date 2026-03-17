@@ -10,6 +10,12 @@ import AdminDashborad from './pages/admin/AdminDashborad';
 import HomeEmploye from './pages/employe/HomeEmploye';
 import { ToastContainer } from 'react-toastify';
 
+import Menu from './pages/customer/CustomerMenu';
+import CartPage from './pages/customer/CartPage';
+import TimePage from './pages/customer/TimePage';
+
+
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -30,7 +36,9 @@ const App = () => {
         </Route>
 
         <Route element={<CustomerLayout />}>
-
+          <Route path='/menu' element={<Menu />} />
+          <Route path='/cart' element={<CartPage />} />
+          <Route path='/time' element={<TimePage />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>
