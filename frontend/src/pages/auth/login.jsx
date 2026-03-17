@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { toast, ToastContainer } from 'react-toastify'
+import { useNavigate } from 'react-router'
 
 const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
+    const navigate = useNavigate()
 
     const toastConfig = {
         style: {
@@ -29,6 +31,10 @@ const Login = () => {
             setLoading(false)
             if (username === 'admin' && password === '1234') {
                 toast.success('เข้าสู่ระบบสำเร็จ ยินดีต้อนรับ!', { ...toastConfig, icon: '✅' })
+                navigate('/admin')
+            } if (username === 'employe' && password === '1234') {
+                toast.success('เข้าสู่ระบบสำเร็จ ยินดีต้อนรับ!', { ...toastConfig, icon: '✅' })
+                navigate('/employes/home')
             } else {
                 toast.error('ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง', { ...toastConfig, icon: '🔐' })
             }
@@ -37,16 +43,6 @@ const Login = () => {
 
     return (
         <div className="min-vh-100 d-flex align-items-center justify-content-center bg-light">
-            <ToastContainer
-                position="top-center"
-                autoClose={3000}
-                hideProgressBar
-                newestOnTop
-                closeOnClick
-                pauseOnHover
-                draggable
-            />
-
             <div className="card border-0 shadow rounded-4 p-5" style={{ width: '100%', maxWidth: 460 }}>
 
                 {/* Logo */}
@@ -112,6 +108,9 @@ const Login = () => {
 
                 <p className="text-center text-muted small mt-3 mb-0">
                     Demo: ใช้ <span className="fw-semibold text-dark">admin</span> / <span className="fw-semibold text-dark">1234</span>
+                </p>
+                <p className="text-center text-muted small mt-3 mb-0">
+                    Demo: ใช้ <span className="fw-semibold text-dark">employe</span> / <span className="fw-semibold text-dark">1234</span>
                 </p>
 
             </div>
