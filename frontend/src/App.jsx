@@ -14,8 +14,6 @@ import Menu from './pages/customer/CustomerMenu';
 import CartPage from './pages/customer/CartPage';
 import TimePage from './pages/customer/TimePage';
 
-
-
 const App = () => {
   return (
     <BrowserRouter>
