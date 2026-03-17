@@ -3,8 +3,8 @@ import { Clock, Loader2, Clock3 } from 'lucide-react';
 import { useLocation, useParams } from 'react-router';
 
 const TimePage = () => {
-    // 105 นาที = 6300 วินาที
-    const TOTAL_TIME = 6300;
+    // 145 นาที = 6300 วินาที
+    const TOTAL_TIME = 8700 ;
     const [timeLeft, setTimeLeft] = useState(TOTAL_TIME);
     const location = useLocation();
 
@@ -112,7 +112,7 @@ const TimePage = () => {
                     <h1 className="fw-bold text-danger m-0 mb-2" style={{ fontSize: '64px', letterSpacing: '1px' }}>
                         {formatTime(timeLeft)}
                     </h1>
-                    <p className="text-muted mb-3" style={{ fontSize: '14px' }}>ระยะเวลาบุฟเฟต์ 105 นาที</p>
+                    <p className="text-muted mb-3" style={{ fontSize: '14px' }}>ระยะเวลาบุฟเฟต์ 145 นาที</p>
 
                     {/* Progress Bar */}
                     <div className="progress" style={{ height: '8px', borderRadius: '10px', backgroundColor: '#F0F0F0' }}>
