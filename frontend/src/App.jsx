@@ -34,9 +34,9 @@ const App = () => {
         </Route>
 
         <Route element={<CustomerLayout />}>
-          <Route path='/menu' element={<Menu />} />
-          <Route path='/cart' element={<CartPage />} />
-          <Route path='/time' element={<TimePage />} />
+          <Route path='/order/:tableNumber' element={<Menu />} />
+          <Route path='/cart/:tableNumber' element={<CartPage />} />
+          <Route path='/time/:tableNumber' element={<TimePage />} />
         </Route>
 
         <Route path="/admin" element={<AdminLayout />}>

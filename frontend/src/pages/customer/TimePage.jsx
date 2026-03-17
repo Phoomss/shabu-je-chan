@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, Loader2, Clock3 } from 'lucide-react';
-import { useLocation } from 'react-router';
+import { useLocation, useParams } from 'react-router';
 
 const TimePage = () => {
     // 105 นาที = 6300 วินาที
-    const TOTAL_TIME = 6300; 
+    const TOTAL_TIME = 6300;
     const [timeLeft, setTimeLeft] = useState(TOTAL_TIME);
     const location = useLocation();
-    
+    const { tableNumber } = useParams()
+
     // --- จุดที่แก้ไข: ย้าย Logic มารวมตอนตั้งค่าเริ่มต้น (Lazy Initialization) ---
-const [orders] = useState(() => {        // 1. ดึงข้อมูลเก่าจาก LocalStorage
+    const [orders] = useState(() => {        // 1. ดึงข้อมูลเก่าจาก LocalStorage
         const savedOrders = localStorage.getItem('shabuJeChanOrders');
-        let currentOrders = savedOrders     ? JSON.parse(savedOrders) : [
+        let currentOrders = savedOrders ? JSON.parse(savedOrders) : [
             {
                 id: 'ORD-MOCK-1',
                 timestamp: '15:32',
-                status: 'preparing', 
+                status: 'preparing',
                 items: [
                     { id: 'p1', name: 'คุโรบูตะหน้ามน', quantity: 2, price: null },
                     { id: 'p2', name: 'สามชั้นชั้นเลิศ', quantity: 1, price: null },
@@ -27,7 +28,7 @@ const [orders] = useState(() => {        // 1. ดึงข้อมูลเก
         // 2. ถ้ารับออเดอร์ใหม่มาจาก CartPage (ผ่าน location.state)
         if (location.state && location.state.newOrder) {
             const newOrder = location.state.newOrder;
-            
+
             // เช็คว่ายังไม่มีออเดอร์นี้ (ป้องกันการแอดซ้ำ)
             if (!currentOrders.some(o => o.id === newOrder.id)) {
                 currentOrders = [...currentOrders, newOrder];
@@ -65,10 +66,10 @@ const [orders] = useState(() => {        // 1. ดึงข้อมูลเก
     };
 
     // คำนวณเปอร์เซ็นต์ของเวลาที่ผ่านไป
-const progressPercent = (timeLeft / TOTAL_TIME) * 100;
+    const progressPercent = (timeLeft / TOTAL_TIME) * 100;
     // ฟังก์ชันสำหรับแสดง Badge สถานะ
     const renderStatusBadge = (status) => {
-        switch(status) {
+        switch (status) {
             case 'preparing':
                 return (
                     <div style={{ backgroundColor: '#FCE8E8', color: '#dc3545', padding: '4px 12px', borderRadius: '20px', fontSize: '12px', fontWeight: '500', display: 'flex', alignItems: 'center', gap: '4px' }}>
@@ -97,9 +98,12 @@ const progressPercent = (timeLeft / TOTAL_TIME) * 100;
             className="time-page"
             style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingBottom: '120px', fontFamily: '"Kanit", sans-serif' }}
         >
+            <h6 className="text-muted fw-bold mb-1" style={{ fontSize: '14px' }}>
+                โต๊ะ {tableNumber} — เวลาที่เหลือ
+            </h6>
             <div className="p-3">
                 {/* 1. การ์ดเวลา (Timer Card) */}
-                <div 
+                <div
                     className="text-center rounded-4 p-4 mb-4 shadow-sm"
                     style={{ backgroundColor: '#FDF8F8', border: '1px solid #faecec' }}
                 >
@@ -113,15 +117,15 @@ const progressPercent = (timeLeft / TOTAL_TIME) * 100;
                         {formatTime(timeLeft)}
                     </h1>
                     <p className="text-muted mb-3" style={{ fontSize: '14px' }}>ระยะเวลาบุฟเฟต์ 105 นาที</p>
-                    
+
                     {/* Progress Bar */}
                     <div className="progress" style={{ height: '8px', borderRadius: '10px', backgroundColor: '#F0F0F0' }}>
-                        <div 
-                            className="progress-bar bg-danger" 
-                            role="progressbar" 
-                            style={{ width: `${progressPercent}%`, borderRadius: '10px' }} 
-                            aria-valuenow={progressPercent} 
-                            aria-valuemin="0" 
+                        <div
+                            className="progress-bar bg-danger"
+                            role="progressbar"
+                            style={{ width: `${progressPercent}%`, borderRadius: '10px' }}
+                            aria-valuenow={progressPercent}
+                            aria-valuemin="0"
                             aria-valuemax="100"
                         ></div>
                     </div>
@@ -157,7 +161,7 @@ const progressPercent = (timeLeft / TOTAL_TIME) * 100;
                     </div>
                 ))}
             </div>
-            
+
             {/* CSS สำหรับ Animation หมุนของ Loader */}
             <style>
                 {`

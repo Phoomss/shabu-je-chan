@@ -60,9 +60,9 @@ const CustomerMenu = () => {
   // 3. กรองข้อมูลตามหมวดหมู่, คำค้นหา และสถานะการขาย (isAvailable)
   const filteredMenu = allMenuItems.filter((item) => {
     const matchCategory = activeCategory === 'ทั้งหมด' || item.categoryName === activeCategory;
-    const matchSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                        (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()));
-    
+    const matchSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()));
+
     // แสดงเฉพาะรายการที่พร้อมขาย (Optional: ถ้าต้องการให้แสดงตัวที่หมดแต่กดไม่ได้ ให้ลบเงื่อนไขนี้)
     // const matchAvailable = item.isAvailable === true;
 
@@ -72,17 +72,17 @@ const CustomerMenu = () => {
   return (
     <>
       <Tier />
-      <div 
-        className="customer-menu-page" 
-        style={{ backgroundColor: '#f8f9fa', minHeight: '100vh', paddingBottom: '80px', fontFamily: '"Kanit", sans-serif' }} 
+      <div
+        className="customer-menu-page"
+        style={{ backgroundColor: '#f8f9fa', minHeight: '100vh', paddingBottom: '80px', fontFamily: '"Kanit", sans-serif' }}
       >
-        <SearchMenu 
-          searchTerm={searchTerm} 
-          setSearchTerm={setSearchTerm} 
-          activeCategory={activeCategory} 
-          setActiveCategory={setActiveCategory} 
+        <SearchMenu
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+          activeCategory={activeCategory}
+          setActiveCategory={setActiveCategory}
         />
-        
+    
         <div className="p-3">
           {/* ส่วนแสดงจำนวนรายการที่พบ */}
           <div className="mb-3 ps-1" style={{ fontSize: '12px', color: '#6c757d' }}>
@@ -90,20 +90,20 @@ const CustomerMenu = () => {
           </div>
 
           {filteredMenu.length > 0 ? (
-            <div className="row g-3"> 
+            <div className="row g-3">
               {filteredMenu.map((item) => (
                 <div key={item.id} className="col-12 col-md-6 col-lg-4">
-                  <MenuCard 
-                    item={item} 
-                    categoryName={item.categoryName} 
+                  <MenuCard
+                    item={item}
+                    categoryName={item.categoryName}
                     onAddToCart={item.isAvailable ? addToCart : null} // ถ้าของหมดจะกดเพิ่มไม่ได้
                   />
                 </div>
               ))}
             </div>
           ) : (
-            <div 
-              className="text-center text-muted mt-5" 
+            <div
+              className="text-center text-muted mt-5"
               style={{ fontFamily: '"Kanit", sans-serif', fontSize: '16px' }}
             >
               <i className="bi bi-search mb-2" style={{ fontSize: '2rem' }}></i>

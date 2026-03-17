@@ -1,20 +1,22 @@
-import React, { useState } from 'react'; 
+import React, { useState } from 'react';
 import { Bell, CircleCheck } from 'lucide-react';
+import { useParams } from 'react-router';
 
 function Navbar() {
   const [showAlert, setShowAlert] = useState(false);
-  const [isClosing, setIsClosing] = useState(false); 
+  const [isClosing, setIsClosing] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const { tableNumber } = useParams()
 
   const handleCallStaff = () => {
     setShowAlert(true);
     setIsClosing(false);
 
     setTimeout(() => {
-      setIsClosing(true); 
+      setIsClosing(true);
       setTimeout(() => {
         setShowAlert(false);
-      }, 500); 
+      }, 500);
     }, 3000);
   };
 
@@ -33,7 +35,7 @@ function Navbar() {
         `}
       </style>
 
-      <nav 
+      <nav
         className="sticky-top d-flex justify-content-between align-items-center p-3"
         style={{
           backgroundColor: 'hsl(0 80% 44%)',
@@ -44,14 +46,14 @@ function Navbar() {
       >
         <div className="d-flex align-items-center text-white text-decoration-none" style={{ gap: '5px' }}>
           <img src="/logo.png" alt="logo" style={{ height: '50px', width: 'auto' }} />
-          
+
           <div className="d-flex flex-column ps-1">
             <h2 className="m-0" style={{ fontSize: '14px', fontWeight: 'bold' }}>ชาบูเจ๊จันทร์</h2>
-            <p className="m-0" style={{ fontSize: '12px', opacity: 0.8 }}>โต๊ะ 1 | Standard 499.-</p>
+            <p className="m-0" style={{ fontSize: '12px', opacity: 0.8 }}>โต๊ะ {tableNumber} | Standard 499.-</p>
           </div>
         </div>
 
-        <button 
+        <button
           className="d-flex justify-content-center align-items-center text-white border-0"
           style={{
             padding: '8px 12px',
@@ -61,10 +63,10 @@ function Navbar() {
             fontWeight: 500,
             fontFamily: '"Kanit", sans-serif',
             cursor: 'pointer',
-            transition: 'background-color 0.2s ease' 
+            transition: 'background-color 0.2s ease'
           }}
-          onMouseEnter={() => setIsHovered(true)}   
-          onMouseLeave={() => setIsHovered(false)}  
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           onClick={handleCallStaff}
         >
           <Bell size={16} />&nbsp;เรียกพนักงาน
@@ -72,7 +74,7 @@ function Navbar() {
       </nav>
 
       {showAlert && (
-        <div 
+        <div
           className="position-fixed start-50 translate-middle-x d-flex align-items-center shadow"
           style={{
             top: '20px',

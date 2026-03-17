@@ -1,17 +1,18 @@
 import React from 'react';
 import { UtensilsCrossed, ShoppingCart, Clock } from 'lucide-react';
-import { NavLink } from 'react-router';
-import { useCart } from '../../../contexts/CartContext'; 
+import { NavLink, useParams } from 'react-router';
+import { useCart } from '../../../contexts/CartContext';
 
-const Footer = () => {
+const TabBar = () => {
   // ดึง totalItems มาจาก Context (ตัวเลขรวมจำนวนจานทั้งหมด)
-  const { totalItems } = useCart(); 
+  const { totalItems } = useCart();
+  const { tableNumber } = useParams()
 
   return (
-    <div 
+    <div
       className="fixed-bottom w-100 bg-white d-flex justify-content-around align-items-center"
-      style={{ 
-        boxShadow: '0 -2px 10px rgba(0, 0, 0, 0.05)', 
+      style={{
+        boxShadow: '0 -2px 10px rgba(0, 0, 0, 0.05)',
         padding: '10px 0',
         zIndex: 100,
         fontFamily: '"Kanit", sans-serif',
@@ -19,8 +20,8 @@ const Footer = () => {
       }}
     >
       {/* ปุ่มเมนู */}
-      <NavLink 
-        to="/menu" 
+      <NavLink
+        to={`/order/${tableNumber}`}
         className="text-decoration-none d-flex flex-column align-items-center justify-content-center"
         style={({ isActive }) => ({
           color: isActive ? '#c82333' : '#666666',
@@ -33,8 +34,8 @@ const Footer = () => {
       </NavLink>
 
       {/* ปุ่มตะกร้า + Badge */}
-      <NavLink   
-        to="/cart" 
+      <NavLink
+        to={`/cart/${tableNumber}`}
         className="text-decoration-none d-flex flex-column align-items-center justify-content-center"
         style={({ isActive }) => ({
           color: isActive ? '#c82333' : '#666666',
@@ -44,14 +45,14 @@ const Footer = () => {
       >
         <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <ShoppingCart size={20} />
-          
+
           {/* แสดง Badge เฉพาะเมื่อมีของในตะกร้าเท่านั้น */}
           {totalItems > 0 && (
             <span style={{
               position: 'absolute',
               top: '-8px',
               right: '-22px',
-              backgroundColor: 'hsl(48 96% 50%)', 
+              backgroundColor: 'hsl(48 96% 50%)',
               color: 'black',
               borderRadius: '50%',
               minWidth: '18px',
@@ -64,7 +65,7 @@ const Footer = () => {
               justifyContent: 'center',
               boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
             }}>
-              {totalItems > 99 ? '99+' : totalItems} 
+              {totalItems > 99 ? '99+' : totalItems}
             </span>
           )}
         </div>
@@ -73,7 +74,7 @@ const Footer = () => {
 
       {/* ปุ่มเวลา */}
       <NavLink
-        to="/time"
+        to={`/time/${tableNumber}`}
         className="text-decoration-none d-flex flex-column align-items-center justify-content-center"
         style={({ isActive }) => ({
           color: isActive ? '#c82333' : '#666666',
@@ -88,4 +89,4 @@ const Footer = () => {
   )
 }
 
-export default Footer;
+export default TabBar;

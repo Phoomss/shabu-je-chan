@@ -3,9 +3,9 @@ import { Users, QrCode, X } from 'lucide-react'
 import { QRCodeSVG } from 'qrcode.react'
 
 const statusConfig = {
-  available: { label: 'ว่าง',     bg: 'bg-success bg-opacity-10', badgeColor: '#198754', border: 'border-success' },
-  occupied:  { label: 'กำลังใช้', bg: 'bg-danger bg-opacity-10',  badgeColor: '#dc3545', border: 'border-danger'  },
-  reserved:  { label: 'จอง',      bg: 'bg-warning bg-opacity-10', badgeColor: '#e6a800', border: 'border-warning' },
+  available: { label: 'ว่าง', bg: 'bg-success bg-opacity-10', badgeColor: '#198754', border: 'border-success' },
+  occupied: { label: 'กำลังใช้', bg: 'bg-danger bg-opacity-10', badgeColor: '#dc3545', border: 'border-danger' },
+  reserved: { label: 'จอง', bg: 'bg-warning bg-opacity-10', badgeColor: '#e6a800', border: 'border-warning' },
 }
 
 const CardTableStatus = ({ tableNumber, seats, status = 'available', onChangeStatus }) => {

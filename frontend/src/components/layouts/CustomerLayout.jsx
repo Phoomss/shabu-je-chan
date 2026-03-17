@@ -1,8 +1,8 @@
 import React from 'react'
 import { Outlet } from 'react-router'
 import Navbar from '../shared/CustomerMenu/Navbar'
-import Footer from '../shared/CustomerMenu/Footer'
-import  { CartProvider } from './../../contexts/CartContext';
+import TabBar from '../shared/CustomerMenu/TabBar'
+import { CartProvider } from './../../contexts/CartContext';
 
 const CustomerLayout = () => {
   return (
@@ -11,7 +11,7 @@ const CustomerLayout = () => {
         <main>
           <Navbar />
           <Outlet />
-          <Footer />
+          <TabBar />
         </main>
       </div>
     </CartProvider>

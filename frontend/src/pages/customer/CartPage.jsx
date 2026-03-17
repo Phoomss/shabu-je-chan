@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { useCart } from '../../contexts/CartContext';
 import { Minus, Plus, Trash2, ShoppingBag, Send, CircleCheck } from 'lucide-react';
-import { useNavigate } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 
 const CartPage = () => {
     const { cartItems, addToCart, removeFromCart, clearCart, cartTotal, totalItems } = useCart();
     const navigate = useNavigate();
+    const { tableNumber } = useParams()
 
     // --- State สำหรับควบคุม Custom Alert ---
     const [showAlert, setShowAlert] = useState(false);
@@ -19,11 +20,11 @@ const CartPage = () => {
         const newOrderPayload = {
             id: `ORD-${Date.now()}`,
             timestamp: new Date().toLocaleTimeString('th-TH', { hour: '2-digit', minute: '2-digit' }),
-            status: 'pending', // สถานะเริ่มต้น
+            status: 'pending',
             items: cartItems,
             totalPrice: cartTotal,
-            tableNumber: "1" 
-        };
+            tableNumber: tableNumber  // ✅ แก้จาก "1" เป็น tableNumber
+        }
 
         // 2. [เตรียมพร้อมสำหรับ Backend] 
         try {
@@ -53,7 +54,7 @@ const CartPage = () => {
                 setShowAlert(false);
                 clearCart(); // ล้างตะกร้า
                 // ส่งข้อมูล Payload ไปหน้า TimePage ทันทีเพื่อให้แสดงผลโดยไม่ต้องรอรีเฟรช
-                navigate('/time', { state: { newOrder: newOrderPayload } }); 
+                navigate(`/time/${tableNumber}`, { state: { newOrder: newOrderPayload } })
             }, 500); // รอจังหวะให้ Alert เลื่อนขึ้นเสร็จ
         }, 2000); // โชว์ Alert ค้างไว้ 2 วินาที
     };
@@ -111,7 +112,7 @@ const CartPage = () => {
                         <ShoppingBag size={80} className="text-muted mb-3" style={{ opacity: 0.3 }} />
                         <h5 className="text-muted text-[18px] font-semibold">ตะกร้าว่าง</h5>
                         <p className="text-muted small">เลือกเมนูที่ชอบแล้วเพิ่มลงตะกร้าได้เลย</p>
-                        <button onClick={() => navigate('/menu')} className="btn btn-outline-danger mt-3 px-4" style={{ borderRadius: '25px' }}>
+                        <button onClick={() => navigate(`/order/${tableNumber}`)} className="btn btn-outline-danger mt-3 px-4" style={{ borderRadius: '25px' }}>
                             กลับไปเลือกเมนู
                         </button>
                     </div>
@@ -125,16 +126,16 @@ const CartPage = () => {
 
                         {/* --- รายการอาหาร --- */}
                         {cartItems.map((item) => (
-                            <div 
-                                key={item.id} 
+                            <div
+                                key={item.id}
                                 className="bg-white p-3 mb-3 rounded-4 shadow-sm border-0 position-relative"
                             >
                                 {/* ปุ่มลบรายการ (ถังขยะ) */}
                                 <button
                                     onClick={() => removeFromCart(item.id)} // หรือเปลี่ยนเป็น deleteItem ถ้ามีใน Context
                                     className="btn p-0 position-absolute"
-                                    style={{ 
-                                        top: '15px', right: '15px', color: '#dc3545', border: 'none', background: 'none' 
+                                    style={{
+                                        top: '15px', right: '15px', color: '#dc3545', border: 'none', background: 'none'
                                     }}
                                 >
                                     <Trash2 size={20} />
@@ -151,17 +152,17 @@ const CartPage = () => {
 
                                 <div className="d-flex align-items-center justify-content-between">
                                     <div className="d-flex align-items-center">
-                                        <button 
-                                            onClick={() => removeFromCart(item.id)} 
-                                            className="btn btn-light rounded-circle border p-0 d-flex align-items-center justify-content-center" 
+                                        <button
+                                            onClick={() => removeFromCart(item.id)}
+                                            className="btn btn-light rounded-circle border p-0 d-flex align-items-center justify-content-center"
                                             style={{ width: '32px', height: '32px' }}
                                         >
                                             <Minus size={16} />
                                         </button>
                                         <span className="mx-3 fw-bold">{item.quantity}</span>
-                                        <button 
-                                            onClick={() => addToCart(item)} 
-                                            className="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center" 
+                                        <button
+                                            onClick={() => addToCart(item)}
+                                            className="btn btn-danger rounded-circle p-0 d-flex align-items-center justify-content-center"
                                             style={{ width: '32px', height: '32px', backgroundColor: '#c82333' }}
                                         >
                                             <Plus size={16} />
