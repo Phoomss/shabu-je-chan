@@ -1,0 +1,116 @@
+{
+  "stats": [
+    {
+      "title": "ยอดขายรวม",
+      "total": "12,450",
+      "unit": ".-",
+      "footer": "จากออเดอร์ที่จบแล้ว",
+      "iconClass": "bi-currency-dollar",
+      "iconBg": "bg-success bg-opacity-10",
+      "iconColor": "text-success"
+    },
+    {
+      "title": "ยอดรอเก็บ",
+      "total": "3,280",
+      "unit": ".-",
+      "footer": "จากออเดอร์ที่ยังไม่จบ",
+      "iconClass": "bi-graph-up",
+      "iconBg": "bg-warning bg-opacity-10",
+      "iconColor": "text-warning"
+    },
+    {
+      "title": "จำนวนออเดอร์",
+      "total": "7",
+      "footer": "3 เสร็จ / 4 กำลังดำเนินการ",
+      "iconClass": "bi-cart",
+      "iconBg": "bg-danger bg-opacity-10",
+      "iconColor": "text-danger"
+    },
+    {
+      "title": "โต๊ะใช้งาน",
+      "total": "4 / 12",
+      "footer": "8 โต๊ะว่าง",
+      "iconClass": "bi-people",
+      "iconBg": "bg-primary bg-opacity-10",
+      "iconColor": "text-primary"
+    }
+  ],
+  "alerts": [
+    {
+      "count": 3,
+      "label": "เมนู",
+      "message": "หมดสต็อก - ตรวจสอบที่หน้าพนักงาน",
+      "type": "danger"
+    }
+  ],
+  "orders": [
+    {
+      "table": "โต๊ะ 1",
+      "items": "คุโรบูตะหน้ามน x2, สามชั้นชั้นเลิศ x1, ลูกชิ้นปลาภูเก็ต x1",
+      "total": "799",
+      "status": "เตรียม",
+      "statusColor": "danger",
+      "time": "09:44"
+    },
+    {
+      "table": "โต๊ะ 2",
+      "items": "ริบอายสายฟาด x2, กุ้งแม่น้ำจำแลง x1, ชาเขียวรีฟิลฉบับเจ๊ x2",
+      "total": "938",
+      "status": "รอรับ",
+      "statusColor": "warning",
+      "time": "09:54"
+    },
+    {
+      "table": "โต๊ะ 3",
+      "items": "วากิวจันทร์กระจ่าง x1, ชุดจันทร์ฉาย x1, น้ำลำไยเนื้อเน้น x1",
+      "total": "1,138",
+      "status": "เสิร์ฟแล้ว",
+      "statusColor": "success",
+      "time": "09:14"
+    },
+    {
+      "table": "โต๊ะ 4",
+      "items": "ชุดนารีสโมสร x1, ซุปหม่าล่าล่าสังหาร x1, น้ำกระเจี๊ยบริมจันทร์ x2",
+      "total": "700",
+      "status": "เสิร์ฟแล้ว",
+      "statusColor": "success",
+      "time": "08:55"
+    },
+    {
+      "table": "โต๊ะ 5",
+      "items": "เสือร้องไห้ฉบับตัวแม่ x2, กุ้งแก้วแวววาว x1, พอนซึคุณหนู x1",
+      "total": "729",
+      "status": "รอรับ",
+      "statusColor": "warning",
+      "time": "10:05"
+    },
+    {
+      "table": "โต๊ะ 6",
+      "items": "ชุดเบญจมาศมงคล x1, ซุปจันทร์ส่องสว่าง x1, อัญชันมะนาวเลอค่า x3",
+      "total": "805",
+      "status": "เตรียม",
+      "statusColor": "danger",
+      "time": "10:12"
+    },
+    {
+      "table": "โต๊ะ 7",
+      "items": "สันนอกจักรพรรดิ x2, หอยเชลล์มณีเด้ง x1, เฉาก๊วยนมสดดั่งดวงจันทร์ x2",
+      "total": "1,138",
+      "status": "เสิร์ฟแล้ว",
+      "statusColor": "success",
+      "time": "08:30"
+    }
+  ],
+  "topMenus": [
+    { "name": "ริบอายสายฟาด",          "category": "เนื้อพรีเมียม", "orders": 18, "revenue": 5760 },
+    { "name": "วากิวจันทร์กระจ่าง",    "category": "เนื้อพรีเมียม", "orders": 14, "revenue": 8120 },
+    { "name": "ชุดจันทร์ฉาย",           "category": "ชุดซิกเนเจอร์", "orders": 12, "revenue": 5988 },
+    { "name": "กุ้งแม่น้ำจำแลง",        "category": "อาหารทะเล",    "orders": 11, "revenue": 1980 },
+    { "name": "คุโรบูตะหน้ามน",         "category": "หมูคัดสรร",    "orders": 10, "revenue": 2800 }
+  ],
+  "outOfStock": [
+    { "name": "ลิ้นวัวร่ายรำ",          "category": "เนื้อพรีเมียม" },
+    { "name": "ปลาหมึกคริสตัล",         "category": "อาหารทะเล"    },
+    { "name": "ซุปต้มยำตัวมารดา",       "category": "ซุป"           }
+  ]
+}

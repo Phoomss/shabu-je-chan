@@ -6,8 +6,13 @@ import AdminLayout from './components/layouts/AdminLayout';
 import EmployeLayout from './components/layouts/EmployeLayout';
 import HomePage from './pages/web/HomePage';
 import Login from './pages/auth/login';
+import AdminDashborad from './pages/admin/AdminDashborad';
 import HomeEmploye from './pages/employe/HomeEmploye';
 import { ToastContainer } from 'react-toastify';
+
+import Menu from './pages/customer/CustomerMenu';
+import CartPage from './pages/customer/CartPage';
+import TimePage from './pages/customer/TimePage';
 
 const App = () => {
   return (
@@ -29,11 +34,13 @@ const App = () => {
         </Route>
 
         <Route element={<CustomerLayout />}>
-
+          <Route path='/order/:tableNumber' element={<Menu />} />
+          <Route path='/cart/:tableNumber' element={<CartPage />} />
+          <Route path='/time/:tableNumber' element={<TimePage />} />
         </Route>
 
-        <Route element={<AdminLayout />}>
-
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<AdminDashborad />} />
         </Route>
 
         <Route element={<EmployeLayout />}>
