@@ -12,10 +12,10 @@ const Navbar = () => {
   }, [])
 
   const navLinks = [
-    { label: 'หน้าแรก', to: '/' },
-    { label: 'เมนู', to: '/menu' },
-    { label: 'โปรโมชั่น', to: '/promotion' },
-    { label: 'เกี่ยวกับร้าน', to: '/about' },
+    { href: '#home', label: 'หน้าแรก' },
+    { href: '#menu', label: 'เมนู' },
+    { href: '#promotion', label: 'โปรโมชั่น' },
+    { href: '#about', label: 'เกี่ยวกับร้าน' },
   ]
 
   return (
@@ -49,14 +49,11 @@ const Navbar = () => {
 
           {/* Nav links */}
           <ul className="navbar-nav ms-auto align-items-lg-center me-lg-3 gap-lg-1">
-            {navLinks.map(({ label, to }) => (
-              <li className="nav-item" key={to}>
-                <Link
-                  className={`nav-link fw-medium ${location.pathname === to ? 'text-danger fw-semibold' : 'text-dark'}`}
-                  to={to}
-                >
+            {navLinks.map(({ label, href }) => (
+              <li className="nav-item" key={href}>
+                <a className="nav-link fw-medium text-dark" href={href}>
                   {label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

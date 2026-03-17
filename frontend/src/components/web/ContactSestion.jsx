@@ -32,7 +32,7 @@ const contactItems = [
 
 function ContactSection() {
     return (
-        <section className="py-5">
+        <section id='about' className="py-5">
             <div className="container" style={{ maxWidth: 1100 }}>
                 <div className="row g-5">
 

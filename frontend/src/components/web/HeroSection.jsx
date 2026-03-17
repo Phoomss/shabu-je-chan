@@ -3,6 +3,7 @@ import { Utensils } from "lucide-react"
 function HeroSection() {
     return (
         <section
+            id="home"
             className="d-flex align-items-center text-white"
             style={{
                 width: "100%",
@@ -41,15 +42,6 @@ function HeroSection() {
                     น้ำซุปเข้มข้น รสชาติถูกปากคนไทย ในราคาที่คุ้มค่า
                 </p>
 
-                <div className="d-flex gap-3 rounded-4">
-                    <button className="btn btn-danger btn-lg px-4 rounded-pill d-flex align-items-center gap-2">
-                        <Utensils size={18} />
-                        สั่งอาหาร
-                    </button>
-                    <button className="btn btn-outline-light btn-lg px-4 rounded-pill rounded-4">
-                        ดูเมนู
-                    </button>
-                </div>
             </div>
         </section>
     )

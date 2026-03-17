@@ -17,7 +17,7 @@ function PricingSection() {
     const currentItems = categories.find(c => c.key === activeCategory)?.data || []
 
     return (
-        <section className="py-5 bg-white">
+        <section id='menu' className="py-5 bg-white">
             <div className="container text-center">
 
                 {/* Title */}

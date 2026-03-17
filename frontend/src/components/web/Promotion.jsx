@@ -2,7 +2,7 @@ import React from 'react'
 
 const Promotion = ({ name, description, condition, image, discountPercent, isAvailable }) => {
     return (
-        <div className="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
+        <div id='promotion' className="card border-0 shadow-sm rounded-4 overflow-hidden h-100">
             <img
                 src={image}
                 alt={name}
