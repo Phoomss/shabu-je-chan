@@ -6,49 +6,49 @@
                 "name": "วากิวจันทร์กระจ่าง",
                 "grade": "A5",
                 "description": "ลายหินอ่อนละลายในปาก",
-                "image": "../../public/images/beef/wagyu-a5-jan-krajang.jpg",
+                "image": "/images/beef/wagyu-a5-jan-krajang.jpg",
                 "isAvailable": true
             },
             {
                 "id": "beef_002",
                 "name": "ริบอายสายฟาด",
                 "description": "เนื้อส่วนที่เข้มข้นที่สุด รสชาติเนื้อชัดเจน",
-                "image": "../../public/images/beef/ribeye-prime.jpg",
+                "image": "/images/beef/ribeye-prime.jpg",
                 "isAvailable": true
             },
             {
                 "id": "beef_003",
                 "name": "ลิ้นวัวร่ายรำ",
                 "description": "สไลด์บางเฉียบ กรุบกริบสู้ฟัน",
-                "image": "../../public/images/beef/beef-tongue-sliced.jpg",
+                "image": "/images/beef/beef-tongue-sliced.jpg",
                 "isAvailable": false
             },
             {
                 "id": "beef_004",
                 "name": "เนื้อใบพายประกายแสง",
                 "description": "ลายสวย มีเอ็นแก้วตรงกลาง",
-                "image": "../../public/images/beef/chuck-flap.jpg",
+                "image": "/images/beef/chuck-flap.jpg",
                 "isAvailable": true
             },
             {
                 "id": "beef_005",
                 "name": "เสือร้องไห้ฉบับตัวแม่",
                 "description": "เนื้อติดมัน ฟินระดับสิบ",
-                "image": "../../public/images/beef/crying-tiger.jpg",
+                "image": "/images/beef/crying-tiger.jpg",
                 "isAvailable": true
             },
             {
                 "id": "beef_006",
                 "name": "สันนอกจักรพรรดิ",
                 "description": "นุ่มแน่น สไตล์ผู้ดี",
-                "image": "../../public/images/beef/striploin-emperor.jpg",
+                "image": "/images/beef/striploin-emperor.jpg",
                 "isAvailable": false
             },
             {
                 "id": "beef_007",
                 "name": "เนื้อนุ่มจันทร์เจ้าขา",
                 "description": "หมักสูตรลับ นุ่มพิเศษ",
-                "image": "../../public/images/beef/marinated-beef-special.jpg",
+                "image": "/images/beef/marinated-beef-special.jpg",
                 "isAvailable": true
             }
         ],
@@ -57,49 +57,49 @@
                 "id": "pork_001",
                 "name": "คุโรบูตะหน้ามน",
                 "description": "หมูดำคัดพิเศษ นุ่มละมุน",
-                "image": "../../public/images/pork/kurobuta.jpg",
+                "image": "/images/pork/kurobuta.jpg",
                 "isAvailable": true
             },
             {
                 "id": "pork_002",
                 "name": "สามชั้นชั้นเลิศ",
                 "description": "สไลด์บางเฉียบ",
-                "image": "../../public/images/pork/pork-belly.jpg",
+                "image": "/images/pork/pork-belly.jpg",
                 "isAvailable": true
             },
             {
                 "id": "pork_003",
                 "name": "สันคอพรีเมียม",
                 "description": "ลายมันแทรกกำลังดี",
-                "image": "../../public/images/pork/pork-collar.jpg",
+                "image": "/images/pork/pork-collar.jpg",
                 "isAvailable": true
             },
             {
                 "id": "pork_004",
                 "name": "สันนอกนางฟ้า",
                 "description": "สุขภาพดี ไร้มันส่วนเกิน",
-                "image": "../../public/images/pork/pork-loin.jpg",
+                "image": "/images/pork/pork-loin.jpg",
                 "isAvailable": false
             },
             {
                 "id": "pork_005",
                 "name": "หมูนุ่มสลบเหมือด",
                 "description": "หมูหมักงาสูตรนุ่มพิเศษ",
-                "image": "../../public/images/pork/sesame-marinated-pork.jpg",
+                "image": "/images/pork/sesame-marinated-pork.jpg",
                 "isAvailable": true
             },
             {
                 "id": "pork_006",
                 "name": "ตับสดพิฆาต",
                 "description": "สด เด้ง ไม่คาว",
-                "image": "../../public/images/pork/pork-liver.jpg",
+                "image": "/images/pork/pork-liver.jpg",
                 "isAvailable": false
             },
             {
                 "id": "pork_007",
                 "name": "หมูเด้งดั่งดวงใจ",
                 "description": "หมูบดปรุงรสปั้นก้อน เด้งสะใจ",
-                "image": "../../public/images/pork/pork-balls.jpg",
+                "image": "/images/pork/pork-balls.jpg",
                 "isAvailable": true
             }
         ],
@@ -108,49 +108,49 @@
                 "id": "sea_001",
                 "name": "กุ้งแม่น้ำจำแลง",
                 "description": "กุ้งตัวโต สดใหม่",
-                "image": "../../public/images/seafood/river-prawns.jpg",
+                "image": "/images/seafood/river-prawns.jpg",
                 "isAvailable": true
             },
             {
                 "id": "sea_002",
                 "name": "หอยเชลล์มณีเด้ง",
                 "description": "ขาวอวบ หวานฉ่ำ",
-                "image": "../../public/images/seafood/scallops.jpg",
+                "image": "/images/seafood/scallops.jpg",
                 "isAvailable": true
             },
             {
                 "id": "sea_003",
                 "name": "ปลาหมึกคริสตัล",
                 "description": "สด ใส เด้งสู้ลิ้น",
-                "image": "../../public/images/seafood/crystal-squid.jpg",
+                "image": "/images/seafood/crystal-squid.jpg",
                 "isAvailable": false
             },
             {
                 "id": "sea_004",
                 "name": "ปลากะพงหลงจันทร์",
                 "description": "เนื้อปลาขาว แล่ไร้ก้าง",
-                "image": "../../public/images/seafood/snapper-fillet.jpg",
+                "image": "/images/seafood/snapper-fillet.jpg",
                 "isAvailable": true
             },
             {
                 "id": "sea_005",
                 "name": "แมงกะพรุนพันล้าน",
                 "description": "กรุบกรอบ เคี้ยวมันส์",
-                "image": "../../public/images/seafood/jellyfish.jpg",
+                "image": "/images/seafood/jellyfish.jpg",
                 "isAvailable": true
             },
             {
                 "id": "sea_006",
                 "name": "หอยนางรมทรงเครื่อง",
                 "description": "ตัวใหญ่ หวานเจี๊ยบ",
-                "image": "../../public/images/seafood/oysters.jpg",
+                "image": "/images/seafood/oysters.jpg",
                 "isAvailable": false
             },
             {
                 "id": "sea_007",
                 "name": "กุ้งแก้วแวววาว",
                 "description": "ปอกเปลือกแล้ว ทานสะดวก",
-                "image": "../../public/images/seafood/peeled-prawns.jpg",
+                "image": "/images/seafood/peeled-prawns.jpg",
                 "isAvailable": true
             }
         ],
@@ -158,31 +158,31 @@
             {
                 "id": "app_001",
                 "name": "เกี๊ยวทองคำเจ๊จันทร์",
-                "image": "../../public/images/appetizers/golden-wonton.jpg",
+                "image": "/images/appetizers/golden-wonton.jpg",
                 "isAvailable": true
             },
             {
                 "id": "app_002",
                 "name": "ถุงทองครองพิภพ",
-                "image": "../../public/images/appetizers/money-bags.jpg",
+                "image": "/images/appetizers/money-bags.jpg",
                 "isAvailable": true
             },
             {
                 "id": "app_003",
                 "name": "ยำสาหร่ายมรกต",
-                "image": "../../public/images/appetizers/seaweed-salad.jpg",
+                "image": "/images/appetizers/seaweed-salad.jpg",
                 "isAvailable": false
             },
             {
                 "id": "app_004",
                 "name": "เฟรนช์ฟรายส์ไฮโซ",
-                "image": "../../public/images/appetizers/french-fries.jpg",
+                "image": "/images/appetizers/french-fries.jpg",
                 "isAvailable": true
             },
             {
                 "id": "app_005",
                 "name": "ลูกชิ้นปลาภูเก็ต",
-                "image": "../../public/images/appetizers/phuket-fish-balls.jpg",
+                "image": "/images/appetizers/phuket-fish-balls.jpg",
                 "isAvailable": true
             }
         ],
@@ -191,32 +191,32 @@
                 "id": "soup_001",
                 "name": "ซุปจันทร์ส่องสว่าง",
                 "type": "น้ำใส",
-                "image": "../../public/images/soups/clear-broth.jpg",
+                "image": "/images/soups/clear-broth.jpg",
                 "isAvailable": true
             },
             {
                 "id": "soup_002",
                 "name": "ซุปจันทร์อับแสง",
                 "type": "น้ำดำ",
-                "image": "../../public/images/soups/dark-broth.jpg",
+                "image": "/images/soups/dark-broth.jpg",
                 "isAvailable": true
             },
             {
                 "id": "soup_003",
                 "name": "ซุปต้มยำตัวมารดา",
-                "image": "../../public/images/soups/tom-yum.jpg",
+                "image": "/images/soups/tom-yum.jpg",
                 "isAvailable": false
             },
             {
                 "id": "soup_004",
                 "name": "ซุปหม่าล่าล่าสังหาร",
-                "image": "../../public/images/soups/mala-soup.jpg",
+                "image": "/images/soups/mala-soup.jpg",
                 "isAvailable": true
             },
             {
                 "id": "soup_005",
                 "name": "ซุปกระดูกหมูน้ำนม",
-                "image": "../../public/images/soups/pork-bone-milk-soup.jpg",
+                "image": "/images/soups/pork-bone-milk-soup.jpg",
                 "isAvailable": true
             }
         ],
@@ -224,31 +224,31 @@
             {
                 "id": "dip_001",
                 "name": "พอนซึคุณหนู",
-                "image": "../../public/images/dips/ponzu.jpg",
+                "image": "/images/dips/ponzu.jpg",
                 "isAvailable": true
             },
             {
                 "id": "dip_002",
                 "name": "สุกี้สูตรเจ๊จันทร์",
-                "image": "../../public/images/dips/suki-sauce.jpg",
+                "image": "/images/dips/suki-sauce.jpg",
                 "isAvailable": true
             },
             {
                 "id": "dip_003",
                 "name": "ซีฟู้ดสยบมาร",
-                "image": "../../public/images/dips/seafood-sauce.jpg",
+                "image": "/images/dips/seafood-sauce.jpg",
                 "isAvailable": false
             },
             {
                 "id": "dip_004",
                 "name": "น้ำจิ้มงาพรีเมียม",
-                "image": "../../public/images/dips/sesame-sauce.jpg",
+                "image": "/images/dips/sesame-sauce.jpg",
                 "isAvailable": true
             },
             {
                 "id": "dip_005",
                 "name": "น้ำจิ้มแจ่วตัวแม่",
-                "image": "../../public/images/dips/jaew-sauce.jpg",
+                "image": "/images/dips/jaew-sauce.jpg",
                 "isAvailable": true
             }
         ],
@@ -256,31 +256,31 @@
             {
                 "id": "drink_001",
                 "name": "ชาเขียวรีฟิลฉบับเจ๊",
-                "image": "../../public/images/drinks/green-tea-refill.jpg",
+                "image": "/images/drinks/green-tea-refill.jpg",
                 "isAvailable": true
             },
             {
                 "id": "drink_002",
                 "name": "อัญชันมะนาวเลอค่า",
-                "image": "../../public/images/drinks/butterfly-pea-lemon.jpg",
+                "image": "/images/drinks/butterfly-pea-lemon.jpg",
                 "isAvailable": true
             },
             {
                 "id": "drink_003",
                 "name": "น้ำเก๊กฮวยดับร้อน",
-                "image": "../../public/images/drinks/chrysanthemum-tea.jpg",
+                "image": "/images/drinks/chrysanthemum-tea.jpg",
                 "isAvailable": false
             },
             {
                 "id": "drink_004",
                 "name": "น้ำกระเจี๊ยบริมจันทร์",
-                "image": "../../public/images/drinks/roselle-juice.jpg",
+                "image": "/images/drinks/roselle-juice.jpg",
                 "isAvailable": true
             },
             {
                 "id": "drink_005",
                 "name": "น้ำลำไยเนื้อเน้น",
-                "image": "../../public/images/drinks/longan-juice.jpg",
+                "image": "/images/drinks/longan-juice.jpg",
                 "isAvailable": true
             }
         ],
@@ -288,31 +288,31 @@
             {
                 "id": "dessert_001",
                 "name": "ไอศกรีมพรีเมียมคัดสรร",
-                "image": "../../public/images/desserts/premium-icecream.jpg",
+                "image": "/images/desserts/premium-icecream.jpg",
                 "isAvailable": true
             },
             {
                 "id": "dessert_002",
                 "name": "เฉาก๊วยนมสดดั่งดวงจันทร์",
-                "image": "../../public/images/desserts/grass-jelly-milk.jpg",
+                "image": "/images/desserts/grass-jelly-milk.jpg",
                 "isAvailable": true
             },
             {
                 "id": "dessert_003",
                 "name": "ผลไม้ล้างปากฉบับตัวแม่",
-                "image": "../../public/images/desserts/fresh-fruits.jpg",
+                "image": "/images/desserts/fresh-fruits.jpg",
                 "isAvailable": true
             },
             {
                 "id": "dessert_004",
                 "name": "ข้าวเหนียวมะม่วงนางพญา",
-                "image": "../../public/images/desserts/mango-sticky-rice.jpg",
+                "image": "/images/desserts/mango-sticky-rice.jpg",
                 "isAvailable": false
             },
             {
                 "id": "dessert_005",
                 "name": "พุดดิ้งมะพร้าวอ่อนเลอโฉม",
-                "image": "../../public/images/desserts/coconut-pudding.jpg",
+                "image": "/images/desserts/coconut-pudding.jpg",
                 "isAvailable": true
             }
         ]
