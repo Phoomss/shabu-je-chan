@@ -1,6 +1,6 @@
 import React from 'react'
 import { Clock } from 'lucide-react'
-import orderHistory from '../../data/Orderhistory.json'
+import orderHistory from '../../data/orderHistory.json'
 
 const statusConfig = {
     preparing: { label: 'กำลังเตรียม', badgeClass: 'text-danger bg-danger bg-opacity-10' },
