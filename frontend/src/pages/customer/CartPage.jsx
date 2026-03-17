@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useCart } from '../../contexts/CartContext';
 import { Minus, Plus, Trash2, ShoppingBag, Send, CircleCheck } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 
 const CartPage = () => {
     const { cartItems, addToCart, removeFromCart, clearCart, cartTotal, totalItems } = useCart();

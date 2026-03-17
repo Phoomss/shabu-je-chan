@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Clock, Loader2, Clock3 } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
 const TimePage = () => {
     // 105 นาที = 6300 วินาที

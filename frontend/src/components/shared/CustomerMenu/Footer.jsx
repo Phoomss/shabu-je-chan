@@ -1,6 +1,6 @@
 import React from 'react';
 import { UtensilsCrossed, ShoppingCart, Clock } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router';
 import { useCart } from '../../../contexts/CartContext'; 
 
 const Footer = () => {
