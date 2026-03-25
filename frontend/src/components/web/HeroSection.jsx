@@ -9,7 +9,7 @@ function HeroSection() {
                 width: "100%",
                 minHeight: "100vh",
                 backgroundImage:
-                    "url('https://images.unsplash.com/photo-1553621042-f6e147245754')",
+                    "url('https://v0-shabu-restaurant-website.vercel.app/hero-shabu.jpg')",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
