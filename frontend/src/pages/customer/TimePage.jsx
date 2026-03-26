@@ -3,11 +3,10 @@ import { Clock, Loader2, Clock3 } from 'lucide-react';
 import { useLocation, useParams } from 'react-router';
 
 const TimePage = () => {
-    // 105 นาที = 6300 วินาที
-    const TOTAL_TIME = 6300;
+    // 145 นาที = 6300 วินาที
+    const TOTAL_TIME = 8700 ;
     const [timeLeft, setTimeLeft] = useState(TOTAL_TIME);
     const location = useLocation();
-    const { tableNumber } = useParams()
 
     // --- จุดที่แก้ไข: ย้าย Logic มารวมตอนตั้งค่าเริ่มต้น (Lazy Initialization) ---
     const [orders] = useState(() => {        // 1. ดึงข้อมูลเก่าจาก LocalStorage
@@ -98,9 +97,6 @@ const TimePage = () => {
             className="time-page"
             style={{ backgroundColor: '#ffffff', minHeight: '100vh', paddingBottom: '120px', fontFamily: '"Kanit", sans-serif' }}
         >
-            <h6 className="text-muted fw-bold mb-1" style={{ fontSize: '14px' }}>
-                โต๊ะ {tableNumber} — เวลาที่เหลือ
-            </h6>
             <div className="p-3">
                 {/* 1. การ์ดเวลา (Timer Card) */}
                 <div
@@ -116,7 +112,7 @@ const TimePage = () => {
                     <h1 className="fw-bold text-danger m-0 mb-2" style={{ fontSize: '64px', letterSpacing: '1px' }}>
                         {formatTime(timeLeft)}
                     </h1>
-                    <p className="text-muted mb-3" style={{ fontSize: '14px' }}>ระยะเวลาบุฟเฟต์ 105 นาที</p>
+                    <p className="text-muted mb-3" style={{ fontSize: '14px' }}>ระยะเวลาบุฟเฟต์ 145 นาที</p>
 
                     {/* Progress Bar */}
                     <div className="progress" style={{ height: '8px', borderRadius: '10px', backgroundColor: '#F0F0F0' }}>

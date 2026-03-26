@@ -5,9 +5,8 @@ import { useCart } from '../../contexts/CartContext';
 
 import MenuCard from '../../components/cards/CustomerMenu/MenuCard';
 
-// 1. นำเข้าข้อมูลจากทั้ง 3 ไฟล์
+// 1. นำเข้าข้อมูลจากทั้ง 2 ไฟล์
 import menuDataJson from '../../data/restaurantMenu.json';
-import hotDealsJson from '../../data/restaurantHotDeals.json';
 import setMenuJson from '../../data/restauranSetMenu.json';
 
 const CustomerMenu = () => {
@@ -18,8 +17,6 @@ const CustomerMenu = () => {
   // 2. รวมข้อมูลและจัดหมวดหมู่ด้วย useMemo
   const allMenuItems = useMemo(() => {
     const categoryMap = {
-      // จาก restaurantHotDeals.json
-      hotDeals: 'โปรโมชั่นเด็ด',
       // จาก restauranSetMenu.json
       signatureSets: 'ชุดเซตสุดคุ้ม',
       // จาก restaurantMenu.json
@@ -42,15 +39,13 @@ const CustomerMenu = () => {
         const itemsWithCategory = items.map(item => ({
           ...item,
           categoryName: thaiCategoryName,
-          // เพิ่ม flag เพื่อระบุประเภทข้อมูล (เผื่อใช้แยก Logic ใน MenuCard)
-          sourceType: key === 'hotDeals' ? 'deal' : (key === 'signatureSets' ? 'set' : 'menu')
+          sourceType: key === 'signatureSets' ? 'set' : 'menu'
         }));
         flatList = [...flatList, ...itemsWithCategory];
       }
     };
 
-    // เรียกใช้กับทั้ง 3 แหล่งข้อมูล
-    processData(hotDealsJson);
+    // เรียกใช้กับทั้ง 2 แหล่งข้อมูล (ไม่รวมโปรโมชั่น)
     processData(setMenuJson);
     processData(menuDataJson);
 
@@ -59,14 +54,12 @@ const CustomerMenu = () => {
 
   // 3. กรองข้อมูลตามหมวดหมู่, คำค้นหา และสถานะการขาย (isAvailable)
   const filteredMenu = allMenuItems.filter((item) => {
-    const matchCategory = activeCategory === 'ทั้งหมด' || item.categoryName === activeCategory;
+    const matchCategory = activeCategory === 'ทั้งหมด' || activeCategory === item.categoryName;
     const matchSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       (item.description && item.description.toLowerCase().includes(searchTerm.toLowerCase()));
+    const matchAvailable = item.isAvailable === true;
 
-    // แสดงเฉพาะรายการที่พร้อมขาย (Optional: ถ้าต้องการให้แสดงตัวที่หมดแต่กดไม่ได้ ให้ลบเงื่อนไขนี้)
-    // const matchAvailable = item.isAvailable === true;
-
-    return matchCategory && matchSearch;
+    return matchCategory && matchSearch && matchAvailable;
   });
 
   return (

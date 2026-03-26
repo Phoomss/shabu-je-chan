@@ -4,16 +4,15 @@ import { Search } from 'lucide-react';
 const SearchMenu = ({ searchTerm, setSearchTerm, activeCategory, setActiveCategory }) => {
     // ปรับรายการหมวดหมู่ให้ตรงกับ categoryMap ใน CustomerMenu.jsx
     const categories = [
-        'ทั้งหมด', 
-        'โปรโมชั่นเด็ด', // เพิ่มใหม่จาก restaurantHotDeals.json
+        'ทั้งหมด',
         'ชุดเซตสุดคุ้ม', // ปรับชื่อให้ตรงกับ restauranSetMenu.json
-        'เนื้อพรีเมียม', 
-        'หมูนุ่ม', 
-        'อาหารทะเล', 
-        'ของว่าง', 
-        'ซุป', 
-        'น้ำจิ้ม', 
-        'เครื่องดื่ม', 
+        'เนื้อพรีเมียม',
+        'หมูนุ่ม',
+        'อาหารทะเล',
+        'ของว่าง',
+        'ซุป',
+        'น้ำจิ้ม',
+        'เครื่องดื่ม',
         'ของหวาน'
     ];
 

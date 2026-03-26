@@ -1,6 +1,6 @@
 import React from "react"
 import StatCard from "../../components/cards/StatCard"
-import dashboardData from "../../data/adminDashboard"
+import dashboardData from "../../data/adminDashboard.json"
 
 import {
   ClipboardList,

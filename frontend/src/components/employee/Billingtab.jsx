@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Users, CheckCircle } from 'lucide-react'
 import { toast } from 'react-toastify'
-import orderHistory from '../../data/orderHistory.json'
+import orderHistory from '../../data/Orderhistory.json'
 
 const statusConfig = {
   preparing: { label: 'เตรียม',     badgeClass: 'text-danger bg-danger bg-opacity-10' },
