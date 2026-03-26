@@ -54,7 +54,7 @@ const Login = () => {
                         <img src="./logo.png" alt="" style={{ width: 80, height: 80 }} />
                     </div>
                     <h4 className="fw-bold mb-1">ชาบูเจ๊จันทร์</h4>
-                    <p className="text-muted small mb-0">เข้าสู่ระบบสำหรับแอดมิน / เจ้าของร้าน</p>
+                    <p className="text-muted small mb-0">เข้าสู่ระบบสำหรับแอดมิน / พนักงาน</p>
                 </div>
 
                 <hr className="mb-4" />
