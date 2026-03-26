@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
-import Tier from '../../components/shared/CustomerMenu/Tier';
-import SearchMenu from '../../components/shared/CustomerMenu/SearchMenu';
+import Tier from '../../components/customer/CustomerMenu/Tier';
+import SearchMenu from '../../components/customer/CustomerMenu/SearchMenu';
 import { useCart } from '../../contexts/CartContext';
 
 import MenuCard from '../../components/cards/CustomerMenu/MenuCard';

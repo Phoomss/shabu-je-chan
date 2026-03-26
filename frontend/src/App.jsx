@@ -7,7 +7,7 @@ import EmployeLayout from './components/layouts/EmployeLayout';
 import HomePage from './pages/web/HomePage';
 import Login from './pages/auth/login';
 import AdminDashborad from './pages/admin/AdminDashborad';
-import HomeEmploye from './pages/employe/HomeEmploye';
+import HomeEmploye from './pages/employee/HomeEmploye';
 import { ToastContainer } from 'react-toastify';
 
 import Menu from './pages/customer/CustomerMenu';

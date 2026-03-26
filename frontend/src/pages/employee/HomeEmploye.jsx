@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { ClipboardList, Grid, Scissors, History, CreditCard, Wrench } from 'lucide-react'
-import CardTable from '../../components/employe/CardTable'
-import CardTableStatus from '../../components/employe/CardTableStatus'
-import TableLegend from '../../components/employe/TableLegend'
-import MenuManage from '../../components/employe/MenuManage'
+import CardTable from '../../components/employee/CardTable'
+import CardTableStatus from '../../components/employee/CardTableStatus'
+import TableLegend from '../../components/employee/TableLegend'
+import MenuManage from '../../components/employee/MenuManage'
 import mockTables from '../../data/table.json'
 import mockStatusTables from '../../data/tableStatus.json'
-import HistoryTab from '../../components/employe/Historytab'
-import BillingTab from '../../components/employe/Billingtab'
+import HistoryTab from '../../components/employee/Historytab'
+import BillingTab from '../../components/employee/Billingtab'
 
 const tabs = [
   { key: 'orders', icon: <ClipboardList size={16} />, label: 'รายการสั่ง', badge: 1 },
